@@ -1,8 +1,7 @@
 import React from "react"
 import clsx from "clsx"
-import { Inter } from "next/font/google"
-import { DarkModeSwitch } from "../components/DarkModeSwitch"
-const inter = Inter({ subsets: ["latin"] })
+import { Select } from "@/components/inputs"
+import { Layout } from "@/components/layout"
 
 type Size = "xs" | "sm" | "md" | "lg" | "xl"
 type SizeAndNull = null | "xs" | "sm" | "md" | "lg" | "xl"
@@ -16,24 +15,15 @@ export default function Home() {
   const [hoverEffect, setHoverEffect] = React.useState(true)
 
   return (
-    <main
-      className={clsx(
-        inter.className,
-        "flex min-h-screen w-screen relative flex-col items-center justify-between bg-white dark:bg-neutral-900 text-gray-800 dark:text-white p-1 xl:p-0"
-      )}
-    >
-      <div className="top-4 absolute right-4">
-        <DarkModeSwitch />
-      </div>
-
+    <Layout>
       <div className="grid grid-cols-1 lg:grid-cols-2 w-full flex-1">
-        <article className="w-full h-full flex items-center justify-center">
+        <article className="w-full h-full flex items-center justify-center p-4 lg:p-4 mt-4 lg:mt-0">
           {/* Product Block */}
           <a
             href="#"
             className={clsx(
-              "w-96 border relative overflow-hidden group transition-all",
-              hoverEffect && "hover:shadow-xl hover:translate-x-1 hover:-translate-y-1",
+              "w-96 border relative overflow-hidden group transition-all bg-slate-50 dark:bg-gray-800 border-gray-300 dark:border-gray-700",
+              hoverEffect && "hover:shadow-xl dark:shadow-gray-700",
               borderRadius === null && "rounded-none",
               borderRadius === "xs" && "rounded-sm",
               borderRadius === "sm" && "rounded",
@@ -119,14 +109,24 @@ export default function Home() {
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
               </p>
+
+              <p className="font-semibold mt-3">9.99$</p>
             </div>
           </a>
         </article>
 
-        <aside className="w-full h-full border-l-2 border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 p-1 xl:p-3">
-          <div></div>
+        <aside className="w-full h-full border-t-2 lg:border-t-0 border-l-0 lg:border-l-2 border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-4 lg:p-4">
+          {/* Options */}
+          <div className="h-full flex flex-col items-center justify-center flex-1 mx-auto w-full lg:w-96">
+            <Select
+              label="Font Size"
+              value={fontSize}
+              onChange={(e) => setFontSize(e.target.value as Size)}
+              options={["xs", "sm", "md", "lg", "xl"]}
+            />
+          </div>
         </aside>
       </div>
-    </main>
+    </Layout>
   )
 }
