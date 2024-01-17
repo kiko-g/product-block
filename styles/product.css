@@ -1,5 +1,5 @@
 .product-block {
-  @apply w-96 overflow-hidden rounded border-0 border-gray-300 bg-white shadow-xl transition-all hover:shadow-2xl dark:border-gray-700 dark:bg-gray-800;
+  @apply w-80 overflow-hidden rounded border-0 border-gray-300 bg-white shadow-xl transition-all hover:shadow-2xl dark:border-gray-700 dark:bg-gray-800;
 }
 
 .product-block > .image-wrapper {
@@ -47,11 +47,11 @@
 }
 
 .product-block > .image-wrapper > img {
-  @apply block w-full transition-all group-hover:hidden;
+  @apply block w-full transition-all hover:scale-125;
 }
 
 .product-block > .caption {
-  @apply relative mb-4 px-3 py-3;
+  @apply relative px-3 pb-6 pt-3;
 }
 
 .product-block > .caption > .caption-headline {
@@ -71,9 +71,37 @@
 }
 
 .product-block > .caption > p.description {
-  @apply text-base font-normal;
+  @apply text-sm font-normal;
 }
 
 .product-block > .caption > p.price {
   @apply mt-3 text-lg font-semibold tracking-tight;
+}
+
+.product-block > .caption > .colors {
+  @apply mt-3 flex w-min items-center justify-between gap-x-2;
+}
+
+.product-block > .caption > .colors > .color {
+  @apply h-6 w-6 rounded-full transition-all duration-200 ease-in-out;
+}
+
+.product-block > .caption > .colors > .color.active {
+  @apply ring-2 ring-gray-400 ring-offset-2 ring-offset-white;
+}
+
+.product-block > .caption > .buttons {
+  @apply mt-4 flex items-center justify-between gap-x-2;
+}
+
+.product-block > .caption > .buttons > button {
+  @apply flex items-center justify-center gap-x-1 rounded px-3 py-2 text-sm font-medium tracking-tighter transition-all duration-200 ease-in-out;
+}
+
+.product-block > .caption > .buttons > button.add-to-cart {
+  @apply flex-1 bg-emerald-600 text-white hover:bg-emerald-700;
+}
+
+.product-block > .caption > .buttons > button.details {
+  @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
 }
