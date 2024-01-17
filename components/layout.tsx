@@ -2,15 +2,16 @@ import React from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const navigation = [
   {
-    name: "Home",
+    name: "Product",
     href: "/",
   },
   {
-    name: "Product",
-    href: "/product",
+    name: "Editor",
+    href: "/editor",
   },
 ];
 
@@ -127,15 +128,27 @@ function Header() {
   );
 }
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({
+  children,
+  title,
+}: {
+  children: React.ReactNode;
+  title: string;
+}) {
   return (
-    <main
-      className={clsx(
-        "relative flex min-h-screen w-screen flex-col items-center justify-between bg-slate-100 text-gray-800 dark:bg-gray-900 dark:text-white",
-      )}
-    >
-      <Header />
-      <div className="flex w-full flex-1 items-center">{children}</div>
-    </main>
+    <>
+      <Head>
+        <title>Product Block | {title}</title>
+      </Head>
+
+      <main
+        className={clsx(
+          "relative flex min-h-screen w-screen flex-col items-center justify-between bg-slate-100 text-gray-800 dark:bg-gray-900 dark:text-white",
+        )}
+      >
+        <Header />
+        <div className="flex w-full flex-1 items-center">{children}</div>
+      </main>
+    </>
   );
 }
