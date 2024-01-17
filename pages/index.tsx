@@ -55,7 +55,7 @@ export default function Home() {
               className={clsx("w-full", cycleImageOnHover ? "group-hover:block hidden" : "hidden")}
             />
 
-            <div className="caption relative px-3 py-3 mb-4">
+            <div className="relative px-3 py-3 mb-4">
               <div className="flex gap-x-3 items-center justify-between">
                 <span
                   className={clsx(
@@ -86,7 +86,7 @@ export default function Home() {
                 </svg>
               </div>
 
-              <h2
+              <h3
                 className={clsx(
                   "font-bold",
                   fontSize === "xs" && "text-base",
@@ -97,7 +97,7 @@ export default function Home() {
                 )}
               >
                 Product A
-              </h2>
+              </h3>
               <p
                 className={clsx(
                   fontSize === "xs" && "text-xs",

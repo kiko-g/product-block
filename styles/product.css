@@ -1,0 +1,79 @@
+.product-block {
+  @apply w-96 border-0 overflow-hidden transition-all bg-slate-50 dark:bg-gray-800 border-gray-300 dark:border-gray-700 hover:shadow-xl dark:shadow-gray-700 rounded;
+}
+
+.product-block > .image-wrapper {
+  @apply relative;
+}
+
+.product-block > .image-wrapper > .floating {
+  @apply absolute flex flex-col;
+}
+
+.product-block > .image-wrapper > .floating.top-left {
+  @apply top-0 left-0;
+}
+
+.product-block > .image-wrapper > .floating.top-right {
+  @apply top-0 right-0;
+}
+
+.product-block > .image-wrapper > .floating.bottom-left {
+  @apply bottom-0 left-0;
+}
+
+.product-block > .image-wrapper > .floating.bottom-right {
+  @apply bottom-0 right-0;
+}
+
+.product-block > .image-wrapper > .floating > span.badge {
+  @apply font-medium tracking-tighter text-white px-3 py-3 h-full w-full;
+}
+
+.product-block > .image-wrapper > .floating > span.badge.sale {
+  @apply bg-rose-600;
+}
+
+.product-block > .image-wrapper > .floating > span.badge.new {
+  @apply bg-lime-500;
+}
+
+.product-block > .image-wrapper > .floating > span.badge.hot {
+  @apply bg-orange-500;
+}
+
+.product-block > .image-wrapper > .floating > span.badge.sold-out {
+  @apply bg-gray-500;
+}
+
+.product-block > .image-wrapper > img {
+  @apply w-full group-hover:hidden block;
+}
+
+.product-block > .caption {
+  @apply relative px-3 py-3 mb-4;
+}
+
+.product-block > .caption > .caption-headline {
+  @apply flex gap-x-3 items-center justify-between;
+}
+
+.product-block > .caption > .caption-headline > span.brand {
+  @apply inline-flex flex-1 uppercase font-medium tracking-tighter text-sm;
+}
+
+.product-block > .caption > .caption-headline > svg.icon {
+  @apply w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity;
+}
+
+.product-block > .caption > h3.name {
+  @apply font-bold text-xl;
+}
+
+.product-block > .caption > p.description {
+  @apply font-normal text-base;
+}
+
+.product-block > .caption > p.price {
+  @apply font-semibold mt-3 tracking-tight text-lg;
+}
