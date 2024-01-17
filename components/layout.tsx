@@ -38,7 +38,7 @@ function DarkModeSwitch() {
   }
 
   return (
-    <div className="pointer-events-auto">
+    <div className="pointer-events-auto flex items-center justify-center">
       <button
         type="button"
         onClick={toggleMode}
