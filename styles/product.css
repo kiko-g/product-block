@@ -27,7 +27,7 @@
 }
 
 .product-block > .image-wrapper > .floating > span.badge {
-  @apply font-medium tracking-tighter text-white px-3 py-3 h-full w-full;
+  @apply text-xs font-medium tracking-tighter text-white px-2 py-2 h-full w-full text-center;
 }
 
 .product-block > .image-wrapper > .floating > span.badge.sale {
