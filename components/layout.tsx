@@ -81,7 +81,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main
       className={clsx(
-        "flex min-h-screen w-screen relative flex-col items-center justify-between bg-white dark:bg-gray-900 text-gray-800 dark:text-white"
+        "flex min-h-screen w-screen relative flex-col items-center justify-between bg-slate-100 dark:bg-gray-900 text-gray-800 dark:text-white"
       )}
     >
       <div className="top-4 absolute right-4">
