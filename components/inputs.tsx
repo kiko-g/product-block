@@ -4,22 +4,22 @@ export function Select({
   onChange,
   options,
 }: {
-  label: string
-  value: string
-  onChange: (e: any) => void
-  options: string[]
+  label: string;
+  value: string;
+  onChange: (e: any) => void;
+  options: string[];
 }) {
-  const id = `select-${label}`
+  const id = `select-${label}`;
 
   return (
-    <div className="flex flex-col w-full">
-      <label className="text-sm font-medium mb-1">
+    <div className="flex w-full flex-col">
+      <label className="mb-1 text-sm font-medium">
         <span>{label}</span>
       </label>
       <select
         value={value}
         onChange={onChange}
-        className="bg-gray-200 cursor-pointer hover:opacity-80 transition dark:bg-gray-700 border border-gray-300 dark:border-gray-700 rounded-md p-2 mb-2 w-full"
+        className="mb-2 w-full cursor-pointer rounded-md border border-gray-300 bg-gray-200 p-2 transition hover:opacity-80 dark:border-gray-700 dark:bg-gray-700"
       >
         {options.map((size) => (
           <option key={size} value={size}>
@@ -28,5 +28,5 @@ export function Select({
         ))}
       </select>
     </div>
-  )
+  );
 }

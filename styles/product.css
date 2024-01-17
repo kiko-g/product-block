@@ -1,5 +1,5 @@
 .product-block {
-  @apply w-96 border-0 overflow-hidden transition-all bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 hover:shadow-2xl rounded shadow-xl;
+  @apply w-96 overflow-hidden rounded border-0 border-gray-300 bg-white shadow-xl transition-all hover:shadow-2xl dark:border-gray-700 dark:bg-gray-800;
 }
 
 .product-block > .image-wrapper {
@@ -11,11 +11,11 @@
 }
 
 .product-block > .image-wrapper > .floating.top-left {
-  @apply top-0 left-0;
+  @apply left-0 top-0;
 }
 
 .product-block > .image-wrapper > .floating.top-right {
-  @apply top-0 right-0;
+  @apply right-0 top-0;
 }
 
 .product-block > .image-wrapper > .floating.bottom-left {
@@ -27,7 +27,7 @@
 }
 
 .product-block > .image-wrapper > .floating > span.badge {
-  @apply text-xs font-medium tracking-tighter text-white px-2 py-2 h-full w-full text-center z-10;
+  @apply z-10 h-full w-full px-2 py-2 text-center text-xs font-medium tracking-tighter text-white;
 }
 
 .product-block > .image-wrapper > .floating > span.badge.sale {
@@ -47,33 +47,33 @@
 }
 
 .product-block > .image-wrapper > img {
-  @apply w-full group-hover:hidden block transition-all;
+  @apply block w-full transition-all group-hover:hidden;
 }
 
 .product-block > .caption {
-  @apply relative px-3 py-3 mb-4;
+  @apply relative mb-4 px-3 py-3;
 }
 
 .product-block > .caption > .caption-headline {
-  @apply flex gap-x-3 items-center justify-between;
+  @apply flex items-center justify-between gap-x-3;
 }
 
 .product-block > .caption > .caption-headline > span.brand {
-  @apply inline-flex flex-1 uppercase font-medium tracking-tighter text-sm;
+  @apply inline-flex flex-1 text-sm font-medium uppercase tracking-tighter;
 }
 
 .product-block > .caption > .caption-headline > svg.icon {
-  @apply w-5 h-5 transition-opacity fill-none stroke-black dark:stroke-white duration-200 ease-in-out;
+  @apply h-5 w-5 fill-none stroke-black transition-opacity duration-200 ease-in-out dark:stroke-white;
 }
 
 .product-block > .caption > h3.name {
-  @apply font-bold text-xl;
+  @apply text-xl font-bold;
 }
 
 .product-block > .caption > p.description {
-  @apply font-normal text-base;
+  @apply text-base font-normal;
 }
 
 .product-block > .caption > p.price {
-  @apply font-semibold mt-3 tracking-tight text-lg;
+  @apply mt-3 text-lg font-semibold tracking-tight;
 }

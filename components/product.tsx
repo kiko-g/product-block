@@ -1,6 +1,6 @@
 export function Product() {
   return (
-    <a href="#" className="group product-block">
+    <a href="#" className="product-block group">
       <div className="image-wrapper">
         <div className="floating top-left">
           <span className="badge new">New</span>
@@ -37,7 +37,10 @@ export function Product() {
 
         <h3 className="name">Product A</h3>
 
-        <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+        <p className="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+          voluptatum.
+        </p>
 
         <p className="price">9.99$</p>
 
@@ -46,5 +49,5 @@ export function Product() {
         <div className="buttons"></div>
       </div>
     </a>
-  )
+  );
 }

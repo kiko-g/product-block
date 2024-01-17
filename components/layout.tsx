@@ -1,7 +1,7 @@
-import React from "react"
-import clsx from "clsx"
-import Link from "next/link"
-import { useRouter } from "next/router"
+import React from "react";
+import clsx from "clsx";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const navigation = [
   {
@@ -12,33 +12,38 @@ const navigation = [
     name: "Product",
     href: "/product",
   },
-]
+];
 
 function DarkModeSwitch() {
   function disableTransitionsTemporarily() {
-    document.documentElement.classList.add("[&_*]:!transition-none")
+    document.documentElement.classList.add("[&_*]:!transition-none");
     window.setTimeout(() => {
-      document.documentElement.classList.remove("[&_*]:!transition-none")
-    }, 0)
+      document.documentElement.classList.remove("[&_*]:!transition-none");
+    }, 0);
   }
 
   function toggleMode() {
-    disableTransitionsTemporarily()
+    disableTransitionsTemporarily();
 
-    let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
-    let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = document.documentElement.classList.toggle("dark")
+    let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    let isSystemDarkMode = darkModeMediaQuery.matches;
+    let isDarkMode = document.documentElement.classList.toggle("dark");
 
     if (isDarkMode === isSystemDarkMode) {
-      delete window.localStorage.isDarkMode
+      delete window.localStorage.isDarkMode;
     } else {
-      window.localStorage.isDarkMode = isDarkMode
+      window.localStorage.isDarkMode = isDarkMode;
     }
   }
 
   return (
     <div className="pointer-events-auto">
-      <button type="button" onClick={toggleMode} aria-label="Toggle dark mode" className="group">
+      <button
+        type="button"
+        onClick={toggleMode}
+        aria-label="Toggle dark mode"
+        className="group"
+      >
         {/* Sun */}
         <svg
           viewBox="0 0 24 24"
@@ -54,7 +59,7 @@ function DarkModeSwitch() {
             "[@media(prefers-color-scheme:dark)]:stroke-orange-400",
             "group-hover:fill-orange-400",
             "[@media(prefers-color-scheme:dark)]:group-hover:fill-orange-50",
-            "[@media(prefers-color-scheme:dark)]:group-hover:stroke-orange-400"
+            "[@media(prefers-color-scheme:dark)]:group-hover:stroke-orange-400",
           )}
         >
           <path d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z"></path>
@@ -75,7 +80,7 @@ function DarkModeSwitch() {
             "[@media(prefers-color-scheme:dark)]:stroke-blue-400",
             "group-hover:fill-blue-400",
             "[@media(prefers-color-scheme:dark)]:group-hover:fill-blue-50",
-            "[@media(prefers-color-scheme:dark)]:group-hover:stroke-blue-400"
+            "[@media(prefers-color-scheme:dark)]:group-hover:stroke-blue-400",
           )}
         >
           <path
@@ -87,25 +92,27 @@ function DarkModeSwitch() {
         </svg>
       </button>
     </div>
-  )
+  );
 }
 
 function Header() {
-  const router = useRouter()
-  const { pathname } = router
+  const router = useRouter();
+  const { pathname } = router;
 
   return (
-    <div className="flex w-full px-4 py-4 justify-between items-center gap-x-3 bg-white dark:bg-gray-950 border-b">
-      <div className="flex-1 flex items-center gap-x-2">
+    <div className="flex w-full items-center justify-between gap-x-3 border-b bg-white px-4 py-4 dark:bg-gray-950">
+      <div className="flex flex-1 items-center gap-x-2">
         {navigation.map((item) => (
           <Link
             key={item.name}
             href={item.href}
             className={clsx(
-              "py-2 px-3 rounded text-sm",
+              "rounded px-3 py-2 text-sm",
               "hover:bg-gray-200 dark:hover:bg-gray-800",
               "transition-colors duration-200 ease-in-out",
-              pathname === item.href ? "bg-gray-200 dark:bg-gray-800" : "bg-transparent"
+              pathname === item.href
+                ? "bg-gray-200 dark:bg-gray-800"
+                : "bg-transparent",
             )}
           >
             {item.name}
@@ -117,18 +124,18 @@ function Header() {
         <DarkModeSwitch />
       </div>
     </div>
-  )
+  );
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main
       className={clsx(
-        "flex min-h-screen w-screen relative flex-col items-center justify-between bg-slate-100 dark:bg-gray-900 text-gray-800 dark:text-white"
+        "relative flex min-h-screen w-screen flex-col items-center justify-between bg-slate-100 text-gray-800 dark:bg-gray-900 dark:text-white",
       )}
     >
       <Header />
-      <div className="flex-1 flex w-full items-center">{children}</div>
+      <div className="flex w-full flex-1 items-center">{children}</div>
     </main>
-  )
+  );
 }
