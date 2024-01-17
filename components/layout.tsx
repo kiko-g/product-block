@@ -1,5 +1,7 @@
 import React from "react"
 import clsx from "clsx"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
 export function DarkModeSwitch() {
   function disableTransitionsTemporarily() {
@@ -78,17 +80,49 @@ export function DarkModeSwitch() {
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const router = useRouter()
+  const { pathname } = router
+  const navigation = [
+    {
+      name: "Home",
+      href: "/",
+    },
+    {
+      name: "Product",
+      href: "/product",
+    },
+  ]
+
   return (
     <main
       className={clsx(
         "flex min-h-screen w-screen relative flex-col items-center justify-between bg-slate-100 dark:bg-gray-900 text-gray-800 dark:text-white"
       )}
     >
-      <div className="top-4 absolute right-4">
-        <DarkModeSwitch />
+      <div className="flex w-full px-4 py-4 justify-between items-center gap-x-3">
+        <div className="flex-1 flex items-center gap-x-2">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={clsx(
+                "py-2 px-3 rounded text-sm",
+                "hover:bg-gray-200 dark:hover:bg-gray-800",
+                "transition-colors duration-200 ease-in-out",
+                pathname === item.href ? "bg-gray-200 dark:bg-gray-800" : "bg-transparent"
+              )}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-x-2">
+          <DarkModeSwitch />
+        </div>
       </div>
 
-      {children}
+      <div className="flex-1 flex w-full items-center">{children}</div>
     </main>
   )
 }
