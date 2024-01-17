@@ -1,6 +1,6 @@
 export function Product() {
   return (
-    <a href="#" className="product-block">
+    <a href="#" className="group product-block">
       <div className="image-wrapper">
         <div className="floating top-left">
           <span className="badge new">New</span>
@@ -11,6 +11,7 @@ export function Product() {
         </div>
 
         <img
+          className="group-hover:scale-125"
           alt="Product A1"
           src="https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800"
         />
@@ -22,11 +23,9 @@ export function Product() {
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            stroke="currentColor"
-            className="icon"
+            className="icon opacity-15 group-hover:opacity-100"
           >
             <path
               strokeLinecap="round"

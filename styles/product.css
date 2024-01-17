@@ -1,9 +1,9 @@
 .product-block {
-  @apply w-96 border-0 overflow-hidden transition-all bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 hover:shadow-xl dark:shadow-gray-700 rounded;
+  @apply w-96 border-0 overflow-hidden transition-all bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 hover:shadow-2xl rounded shadow-xl;
 }
 
 .product-block > .image-wrapper {
-  @apply relative;
+  @apply relative overflow-hidden;
 }
 
 .product-block > .image-wrapper > .floating {
@@ -27,7 +27,7 @@
 }
 
 .product-block > .image-wrapper > .floating > span.badge {
-  @apply text-xs font-medium tracking-tighter text-white px-2 py-2 h-full w-full text-center;
+  @apply text-xs font-medium tracking-tighter text-white px-2 py-2 h-full w-full text-center z-10;
 }
 
 .product-block > .image-wrapper > .floating > span.badge.sale {
@@ -47,7 +47,7 @@
 }
 
 .product-block > .image-wrapper > img {
-  @apply w-full group-hover:hidden block;
+  @apply w-full group-hover:hidden block transition-all;
 }
 
 .product-block > .caption {
@@ -63,7 +63,7 @@
 }
 
 .product-block > .caption > .caption-headline > svg.icon {
-  @apply w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity;
+  @apply w-5 h-5 transition-opacity fill-none stroke-black dark:stroke-white duration-200 ease-in-out;
 }
 
 .product-block > .caption > h3.name {
