@@ -11,8 +11,7 @@ export default function Home() {
   const [cycleImageOnHover, setCycleImageOnHover] = React.useState(true);
   const [fontSize, setFontSize] = React.useState<Size>("md");
   const [borderRadius, setBorderRadius] = React.useState<SizeAndNull>("md");
-  const [badgePosition, setBadgePosition] =
-    React.useState<BadgePosition>("top-left");
+  const [badgePosition, setBadgePosition] = React.useState<BadgePosition>("top-left");
   const [hoverEffect, setHoverEffect] = React.useState(true);
 
   return (
@@ -42,26 +41,18 @@ export default function Home() {
                 badgePosition === "bottom-right" ? "right-0 top-0" : "",
               )}
             >
-              <span className="h-full w-full bg-rose-700 px-3 py-3 font-medium tracking-tighter text-white">
-                20%
-              </span>
+              <span className="h-full w-full bg-rose-700 px-3 py-3 font-medium tracking-tighter text-white">20%</span>
             </div>
 
             <img
               src="https://images.unsplash.com/photo-1704775934239-446464509646?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcwNTQyMDYwNA&ixlib=rb-4.0.3&q=80&w=800"
               alt="Product A1"
-              className={clsx(
-                "w-full",
-                cycleImageOnHover ? "block group-hover:hidden" : "block",
-              )}
+              className={clsx("w-full", cycleImageOnHover ? "block group-hover:hidden" : "block")}
             />
             <img
               src="https://plus.unsplash.com/premium_photo-1700583712248-6c6c1625ec14?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcwNTQyMDYxNg&ixlib=rb-4.0.3&q=80&w=800"
               alt="Product A2"
-              className={clsx(
-                "w-full",
-                cycleImageOnHover ? "hidden group-hover:block" : "hidden",
-              )}
+              className={clsx("w-full", cycleImageOnHover ? "hidden group-hover:block" : "hidden")}
             />
 
             <div className="relative mb-4 px-3 py-3">
@@ -116,8 +107,7 @@ export default function Home() {
                   fontSize === "xl" && "text-xl",
                 )}
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, voluptatum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
               </p>
 
               <p className="mt-3 font-semibold">9.99$</p>

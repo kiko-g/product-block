@@ -39,12 +39,7 @@ function DarkModeSwitch() {
 
   return (
     <div className="pointer-events-auto flex items-center justify-center">
-      <button
-        type="button"
-        onClick={toggleMode}
-        aria-label="Toggle dark mode"
-        className="group"
-      >
+      <button type="button" onClick={toggleMode} aria-label="Toggle dark mode" className="group">
         {/* Sun */}
         <svg
           viewBox="0 0 24 24"
@@ -111,9 +106,7 @@ function Header() {
               "rounded px-3 py-2 text-sm",
               "hover:bg-gray-200 dark:hover:bg-gray-800",
               "transition-colors duration-200 ease-in-out",
-              pathname === item.href
-                ? "bg-gray-200 dark:bg-gray-800"
-                : "bg-transparent",
+              pathname === item.href ? "bg-gray-200 dark:bg-gray-800" : "bg-transparent",
             )}
           >
             {item.name}
@@ -128,13 +121,7 @@ function Header() {
   );
 }
 
-export function Layout({
-  children,
-  title,
-}: {
-  children: React.ReactNode;
-  title: string;
-}) {
+export function Layout({ children, title }: { children: React.ReactNode; title: string }) {
   return (
     <>
       <Head>
