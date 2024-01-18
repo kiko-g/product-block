@@ -17,13 +17,13 @@ export default function Home() {
 
   return (
     <Layout title="Editor">
-      <div className="grid w-full flex-1 grid-cols-1 lg:grid-cols-2">
+      <div className="grid w-full flex-1 grid-cols-1 divide-x divide-gray-200 self-stretch lg:grid-cols-2">
         <article className="mt-4 flex h-full w-full items-center justify-center p-4 lg:mt-0 lg:p-4">
           {/* Product Block */}
           <a
             href="#"
             className={clsx(
-              "group relative w-96 overflow-hidden border border-gray-300 bg-slate-50 transition-all dark:border-gray-700 dark:bg-gray-800",
+              "group relative w-96 overflow-hidden border border-gray-300 bg-white transition-all dark:border-gray-700 dark:bg-gray-800",
               hoverEffect && "hover:shadow-xl dark:shadow-gray-700",
               borderRadius === null && "rounded-none",
               borderRadius === "xs" && "rounded-sm",
@@ -125,7 +125,7 @@ export default function Home() {
           </a>
         </article>
 
-        <aside className="h-full w-full border-l-0 border-t-2 border-gray-300 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900 lg:border-l-2 lg:border-t-0 lg:p-4">
+        <aside className="h-full w-full border-gray-300 p-4 dark:border-gray-700 lg:p-4">
           {/* Options */}
           <div className="mx-auto flex h-full w-full flex-1 flex-col items-center justify-center lg:w-96">
             <Select

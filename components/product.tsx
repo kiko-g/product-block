@@ -19,7 +19,6 @@ export function Product() {
         </div>
 
         <img
-          className=""
           alt="Product A1"
           src="https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800"
         />
@@ -45,10 +44,7 @@ export function Product() {
 
         <h3 className="name">Product A</h3>
 
-        <p className="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-          voluptatum.
-        </p>
+        <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
 
         <p className="price">9.99$</p>
 

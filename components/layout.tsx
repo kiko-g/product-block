@@ -143,7 +143,7 @@ export function Layout({
 
       <main
         className={clsx(
-          "relative flex min-h-screen w-screen flex-col items-center justify-between bg-slate-100 text-gray-800 dark:bg-gray-900 dark:text-white",
+          "relative flex min-h-screen w-screen flex-col items-center justify-between bg-slate-50 text-gray-800 dark:bg-gray-900 dark:text-white",
         )}
       >
         <Header />
