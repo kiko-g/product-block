@@ -1,5 +1,5 @@
 .product-block {
-  @apply w-80 overflow-hidden rounded border-0 border-gray-300 bg-white shadow-xl transition-all hover:shadow-2xl dark:border-gray-700 dark:bg-gray-800;
+  @apply w-80 overflow-hidden rounded border-0 border-gray-300 bg-white shadow-xl transition-all dark:border-gray-700 dark:bg-gray-800;
 }
 
 .product-block > .image-wrapper {
@@ -47,11 +47,11 @@
 }
 
 .product-block > .image-wrapper > img {
-  @apply block w-full transition-all hover:scale-125;
+  @apply block w-full transition-all hover:scale-110;
 }
 
 .product-block > .caption {
-  @apply relative px-3 pb-6 pt-3;
+  @apply relative px-3 pb-6 pt-3 transition hover:bg-slate-400/5 dark:hover:bg-white/5;
 }
 
 .product-block > .caption > .caption-headline {
@@ -74,8 +74,28 @@
   @apply text-sm font-normal;
 }
 
-.product-block > .caption > p.price {
-  @apply mt-3 text-lg font-semibold tracking-tight;
+.product-block > .caption > .price-and-ratings {
+  @apply mt-3 flex w-full items-center justify-between gap-0;
+}
+
+.product-block > .caption > .price-and-ratings > span.price {
+  @apply text-lg font-semibold tracking-tight;
+}
+
+.product-block > .caption > .price-and-ratings > .ratings {
+  @apply flex items-center gap-x-1;
+}
+
+.product-block > .caption > .price-and-ratings > .ratings > .star {
+  @apply h-4 w-4 text-amber-300;
+}
+
+.product-block > .caption > .price-and-ratings > .ratings > .rating-float {
+  @apply text-sm font-semibold text-gray-900 dark:text-white;
+}
+
+.product-block > .caption > .price-and-ratings > .ratings > .rating-count {
+  @apply text-sm font-semibold text-gray-900 dark:text-white;
 }
 
 .product-block > .caption > .colors {
@@ -83,11 +103,11 @@
 }
 
 .product-block > .caption > .colors > .color {
-  @apply h-6 w-6 rounded-full transition-all duration-200 ease-in-out;
+  @apply h-6 w-6 rounded-full transition-all duration-200 ease-in-out hover:opacity-80;
 }
 
 .product-block > .caption > .colors > .color.active {
-  @apply ring-1 ring-gray-400 ring-offset-2 ring-offset-white dark:ring-white dark:ring-offset-gray-800;
+  @apply ring-2 ring-gray-400 ring-offset-2 ring-offset-white dark:ring-white dark:ring-offset-gray-800;
 }
 
 .product-block > .caption > .buttons {
