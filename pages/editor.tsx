@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
+import type { BadgePosition, Color, Size, SizeAndNull } from "@/types";
+
 import { Select } from "@/components/inputs";
 import { Layout } from "@/components/layout";
 
-type Size = "xs" | "sm" | "md" | "lg" | "xl";
-type SizeAndNull = null | "xs" | "sm" | "md" | "lg" | "xl";
-type BadgePosition = "top-left" | "top-right" | "bottom-left" | "bottom-right";
-
 export default function Home() {
+  const colors: Color[] = ["Gray", "Brown", "Blue", "Black"];
+  const [color, setColor] = useState<Color>("Black");
+
   const [cycleImageOnHover, setCycleImageOnHover] = React.useState(true);
   const [fontSize, setFontSize] = React.useState<Size>("md");
   const [borderRadius, setBorderRadius] = React.useState<SizeAndNull>("md");
@@ -18,12 +19,11 @@ export default function Home() {
     <Layout title="Editor">
       <div className="grid w-full flex-1 grid-cols-1 divide-x divide-gray-200 self-stretch lg:grid-cols-2">
         <article className="mt-4 flex h-full w-full items-center justify-center p-4 lg:mt-0 lg:p-4">
-          {/* Product Block */}
           <a
             href="#"
             className={clsx(
-              "group relative w-96 overflow-hidden border border-gray-300 bg-white transition-all dark:border-gray-700 dark:bg-gray-800",
-              hoverEffect && "hover:shadow-xl dark:shadow-gray-700",
+              "product-block",
+              hoverEffect && "hover:shadow-xl",
               borderRadius === null && "rounded-none",
               borderRadius === "xs" && "rounded-sm",
               borderRadius === "sm" && "rounded",
@@ -32,51 +32,27 @@ export default function Home() {
               borderRadius === "xl" && "rounded-xl",
             )}
           >
-            <div
-              className={clsx(
-                "absolute flex",
-                badgePosition === "top-left" ? "left-0 top-0" : "",
-                badgePosition === "top-right" ? "right-0 top-0" : "",
-                badgePosition === "bottom-left" ? "bottom-0 left-0" : "",
-                badgePosition === "bottom-right" ? "right-0 top-0" : "",
-              )}
-            >
-              <span className="h-full w-full bg-rose-700 px-3 py-3 font-medium tracking-tighter text-white">20%</span>
+            <div className="image-wrapper">
+              <div className={clsx("floating", badgePosition)}>
+                <span className="badge new">New</span>
+                <span className="badge sale">-20%</span>
+              </div>
+
+              <img
+                alt="Product A1"
+                src="https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800"
+              />
             </div>
 
-            <img
-              src="https://images.unsplash.com/photo-1704775934239-446464509646?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcwNTQyMDYwNA&ixlib=rb-4.0.3&q=80&w=800"
-              alt="Product A1"
-              className={clsx("w-full", cycleImageOnHover ? "block group-hover:hidden" : "block")}
-            />
-            <img
-              src="https://plus.unsplash.com/premium_photo-1700583712248-6c6c1625ec14?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcwNTQyMDYxNg&ixlib=rb-4.0.3&q=80&w=800"
-              alt="Product A2"
-              className={clsx("w-full", cycleImageOnHover ? "hidden group-hover:block" : "hidden")}
-            />
-
-            <div className="relative mb-4 px-3 py-3">
-              <div className="flex items-center justify-between gap-x-3">
-                <span
-                  className={clsx(
-                    "inline-flex flex-1 font-medium uppercase tracking-tighter",
-                    fontSize === "xs" && "text-[0.625rem]",
-                    fontSize === "sm" && "text-xs",
-                    fontSize === "md" && "text-sm",
-                    fontSize === "lg" && "text-base",
-                    fontSize === "xl" && "text-lg",
-                  )}
-                >
-                  Brand
-                </span>
+            <div className="caption group">
+              <div className="caption-headline">
+                <span className="brand">Brand</span>
 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="h-5 w-5 opacity-0 transition-opacity group-hover:opacity-100"
+                  className="icon opacity-15 group-hover:opacity-100"
                 >
                   <path
                     strokeLinecap="round"
@@ -86,31 +62,68 @@ export default function Home() {
                 </svg>
               </div>
 
-              <h3
-                className={clsx(
-                  "font-bold",
-                  fontSize === "xs" && "text-base",
-                  fontSize === "sm" && "text-lg",
-                  fontSize === "md" && "text-xl",
-                  fontSize === "lg" && "text-2xl",
-                  fontSize === "xl" && "text-3xl",
-                )}
-              >
-                Product A
-              </h3>
-              <p
-                className={clsx(
-                  fontSize === "xs" && "text-xs",
-                  fontSize === "sm" && "text-sm",
-                  fontSize === "md" && "text-base",
-                  fontSize === "lg" && "text-lg",
-                  fontSize === "xl" && "text-xl",
-                )}
-              >
+              <h3 className="name">Product A</h3>
+
+              <p className="description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
               </p>
 
-              <p className="mt-3 font-semibold">9.99$</p>
+              <p className="price">9.99$</p>
+
+              <div className="colors">
+                {colors.map((x, i) => (
+                  <button
+                    key={`color-${x}-${i}`}
+                    onClick={() => setColor(x)}
+                    className={clsx(
+                      "color",
+                      color === x ? "active" : "",
+                      x === "Black" ? "border border-black bg-black/70" : "",
+                      x === "Blue" ? "border border-blue-400 bg-blue-400/70" : "",
+                      x === "Brown" ? "border border-[#b87b58] bg-[#b87b58]/70" : "",
+                      x === "Gray" ? "border border-gray-500 bg-gray-500/70" : "",
+                    )}
+                  ></button>
+                ))}
+              </div>
+
+              <div className="buttons">
+                <button className="add-to-cart">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="h-5 w-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+
+                  <span>Add to cart</span>
+                </button>
+
+                <button className="details">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="h-5 w-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </a>
         </article>

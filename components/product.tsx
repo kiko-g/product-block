@@ -1,7 +1,6 @@
-import clsx from "clsx";
 import React, { useState } from "react";
-
-type Color = "Gray" | "Brown" | "Blue" | "Black";
+import clsx from "clsx";
+import type { Color } from "@/types";
 
 export function Product() {
   const colors: Color[] = ["Gray", "Brown", "Blue", "Black"];
@@ -43,11 +42,8 @@ export function Product() {
         </div>
 
         <h3 className="name">Product A</h3>
-
         <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-
         <p className="price">9.99$</p>
-
         <div className="colors">
           {colors.map((x, i) => (
             <button
@@ -64,7 +60,6 @@ export function Product() {
             ></button>
           ))}
         </div>
-
         <div className="buttons">
           <button className="add-to-cart">
             <svg
