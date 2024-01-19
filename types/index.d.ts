@@ -1,3 +1,13 @@
+export type ProductStatus = {
+  new: boolean;
+  hot: boolean;
+  soldOut: boolean;
+  sale: {
+    active: boolean;
+    percent: number;
+  };
+};
+
 // Product Block Options
 export type Color = "Gray" | "Brown" | "Blue" | "Black";
 export type Size = "xs" | "sm" | "md" | "lg" | "xl";
