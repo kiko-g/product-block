@@ -23,6 +23,16 @@ export function Product() {
       <div className="caption group">
         <div className="caption-headline">
           <span className="brand">Brand</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="h-5 w-5 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+          </svg>
         </div>
 
         <h3 className="name">Product A</h3>
