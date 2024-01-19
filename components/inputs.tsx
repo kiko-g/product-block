@@ -12,7 +12,7 @@ export function Select({
   const id = `select-${label}`;
 
   return (
-    <div className="flex w-full flex-col">
+    <div className="flex flex-col">
       <label className="mb-1 text-sm font-medium">
         <span>{label}</span>
       </label>

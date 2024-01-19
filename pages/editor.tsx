@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import clsx from "clsx";
-import type { BadgePosition, Color, Size, SizeAndNull } from "@/types";
+import type { Alignment, BadgePosition, Color, Size } from "@/types";
 
 import { Select } from "@/components/inputs";
 import { Layout } from "@/components/layout";
 import { Product } from "@/components/product";
 
 export default function Home() {
+  const [fontSize, setFontSize] = React.useState<Size>("md");
+  const [captionAlignment, setCaptionAlignment] = React.useState<Alignment>("left");
+
   const [color, setColor] = useState<Color>("Black");
   const [cycleImageOnHover, setCycleImageOnHover] = React.useState(true);
-  const [fontSize, setFontSize] = React.useState<Size>("md");
-  const [borderRadius, setBorderRadius] = React.useState<SizeAndNull>("md");
+  const [borderRadius, setBorderRadius] = React.useState<Size | null>("md");
   const [badgePosition, setBadgePosition] = React.useState<BadgePosition>("top-left");
   const [hoverEffect, setHoverEffect] = React.useState(true);
 
@@ -31,9 +32,16 @@ export default function Home() {
           <Product status={productStatus} />
         </article>
 
-        <aside className="h-full w-full border-gray-300 p-4 dark:border-gray-700 lg:p-4">
+        <aside className="flex h-full w-full items-center border-gray-300 p-4 dark:border-gray-700 lg:p-16">
           {/* Options */}
-          <div className="mx-auto flex h-full w-full flex-1 flex-col items-center justify-center lg:w-96">
+          <div className="mx-auto grid w-full grid-cols-3 gap-8">
+            <Select
+              label="Caption Alignment"
+              value={captionAlignment}
+              onChange={(e) => setCaptionAlignment(e.target.value as Alignment)}
+              options={["left", "center", "right"]}
+            />
+
             <Select
               label="Font Size"
               value={fontSize}
