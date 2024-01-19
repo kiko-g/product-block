@@ -55,97 +55,97 @@ a.product-block > .image-wrapper > img.sold-out {
 }
 
 a.product-block > div.caption {
-  @apply relative flex-1 px-3 pb-6 pt-3 transition hover:bg-slate-400/5 dark:hover:bg-white/5;
+  @apply relative flex flex-1 flex-col justify-between px-3 pb-6 pt-3 transition hover:bg-slate-400/5 dark:hover:bg-white/5;
 }
 
-a.product-block > div.caption > div.caption-headline {
+a.product-block > div.caption > section > div.caption-headline {
   @apply flex items-center justify-between gap-x-3;
 }
 
-a.product-block > div.caption > div.caption-headline > span.brand {
+a.product-block > div.caption > section > div.caption-headline > span.brand {
   @apply inline-flex flex-1 text-sm font-medium uppercase tracking-tighter;
 }
 
-a.product-block > div.caption > div.caption-headline > svg.icon {
+a.product-block > div.caption > section > div.caption-headline > svg.icon {
   @apply h-5 w-5 fill-none stroke-black transition-opacity duration-200 ease-in-out dark:stroke-white;
 }
 
-a.product-block > div.caption > h3.name {
+a.product-block > div.caption > section > h3.name {
   @apply text-xl font-bold;
 }
 
-a.product-block > div.caption > p.description {
+a.product-block > div.caption > section > p.description {
   @apply text-sm font-normal;
 }
 
-a.product-block > div.caption > div.price-and-ratings {
+a.product-block > div.caption > section > div.price-and-ratings {
   @apply mb-5 mt-2 flex w-full items-center justify-between gap-0;
 }
 
-a.product-block > div.caption > div.price-and-ratings > div.prices {
+a.product-block > div.caption > section > div.price-and-ratings > div.prices {
   @apply flex flex-col;
 }
 
-a.product-block > div.caption > div.price-and-ratings > div.prices > span.price {
+a.product-block > div.caption > section > div.price-and-ratings > div.prices > span.price {
   @apply text-lg font-semibold tracking-tight;
 }
 
-a.product-block > div.caption > div.price-and-ratings > div.prices > span.price.old {
+a.product-block > div.caption > section > div.price-and-ratings > div.prices > span.price.old {
   @apply text-lg font-medium line-through;
 }
 
-a.product-block > div.caption > div.price-and-ratings > div.prices > span.price.sale {
+a.product-block > div.caption > section > div.price-and-ratings > div.prices > span.price.sale {
   @apply text-lg font-semibold tracking-tight text-rose-600 hover:underline;
 }
 
-a.product-block > div.caption > div.price-and-ratings > div.ratings {
+a.product-block > div.caption > section > div.price-and-ratings > div.ratings {
   @apply flex flex-col items-end;
 }
 
-a.product-block > div.caption > div.price-and-ratings > div.ratings > div.rating {
+a.product-block > div.caption > section > div.price-and-ratings > div.ratings > div.rating {
   @apply flex items-center gap-x-1 hover:underline;
 }
 
-a.product-block > div.caption > div.price-and-ratings > div.ratings > div.rating > svg.star {
+a.product-block > div.caption > section > div.price-and-ratings > div.ratings > div.rating > svg.star {
   @apply h-4 w-4 text-amber-300;
 }
 
-a.product-block > div.caption > div.price-and-ratings > div.ratings > div.rating > span.rating-float {
+a.product-block > div.caption > section > div.price-and-ratings > div.ratings > div.rating > span.rating-float {
   @apply text-base font-semibold text-gray-900 dark:text-white;
 }
 
-a.product-block > div.caption > div.price-and-ratings > div.ratings > div.rating > span.rating-count {
+a.product-block > div.caption > section > div.price-and-ratings > div.ratings > div.rating > span.rating-count {
   @apply text-base font-semibold text-gray-900 dark:text-white;
 }
 
-a.product-block > div.caption > div.price-and-ratings > div.ratings > span.sold-a-lot {
+a.product-block > div.caption > section > div.price-and-ratings > div.ratings > span.sold-a-lot {
   @apply text-sm font-bold tracking-tight text-gray-500 hover:underline dark:text-gray-400;
 }
 
-a.product-block > div.caption > div.colors {
+a.product-block > div.caption > footer > div.colors {
   @apply mt-3 flex w-min items-center justify-between gap-x-2;
 }
 
-a.product-block > div.caption > div.colors > button.color {
+a.product-block > div.caption > footer > div.colors > button.color {
   @apply h-6 w-6 rounded-full transition-all duration-200 ease-in-out hover:opacity-80;
 }
 
-a.product-block > div.caption > div.colors > button.color.active {
+a.product-block > div.caption > footer > div.colors > button.color.active {
   @apply ring-2 ring-gray-400 ring-offset-2 ring-offset-white dark:ring-white dark:ring-offset-gray-800;
 }
 
-a.product-block > div.caption > div.buttons {
+a.product-block > div.caption > footer > div.buttons {
   @apply mt-3 flex items-center justify-between gap-x-2;
 }
 
-a.product-block > div.caption > div.buttons > button {
+a.product-block > div.caption > footer > div.buttons > button {
   @apply flex items-center justify-center gap-x-1 rounded px-3 py-2 text-sm font-medium tracking-tighter transition-all duration-200 ease-in-out disabled:cursor-not-allowed disabled:opacity-40;
 }
 
-a.product-block > div.caption > div.buttons > button.add-to-cart {
+a.product-block > div.caption > footer > div.buttons > button.add-to-cart {
   @apply flex-1 bg-emerald-600 text-white hover:bg-emerald-700;
 }
 
-a.product-block > div.caption > div.buttons > button.details {
+a.product-block > div.caption > footer > div.buttons > button.details {
   @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
 }
