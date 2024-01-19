@@ -1,11 +1,10 @@
-<a href="#" class="product-block">
-  <div class="image-wrapper">
-    <div class="floating top-left">
-      <span class="badge new">New</span>
-    </div>
-
-    <div class="floating bottom-right">
-      <span class="badge sale">-20%</span>
+<a href="/product-page" className="product-block">
+  <div className="image-wrapper">
+    <div className="floating top-left">
+      <span className="badge new">New</span>
+      <span className="badge sale">-50%</span>
+      <span className="badge sold-out">Sold Out</span>
+      <span className="badge hot">Hot</span>
     </div>
 
     <img
@@ -14,40 +13,50 @@
     />
   </div>
 
-  <div class="caption group">
-    <div className="caption-headline">
-      <span className="brand">Brand</span>
-    </div>
-
-    <h3 class="name">Product A</h3>
-
-    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-
-    <div className="price-and-ratings">
-      <span className="price">9.99$</span>
-      <div className="ratings">
-        <starIcon />
-        <span className="rating-float">4.95</span>
-        <span className="rating-count">(73)</span>
+  <div className="caption group">
+    <section>
+      <div className="caption-headline">
+        <span className="brand">Brand</span>
+        <arrowUpRightIcon />
       </div>
-    </div>
 
-    <div class="colors">
-      <button onclick="setColor('Gray')" class="color"></button>
-      <button onclick="setColor('Brown')" class="color"></button>
-      <button onclick="setColor('Blue')" class="color"></button>
-      <button onclick="setColor('Black')" class="color active"></button>
-    </div>
+      <h3 className="name">Product A</h3>
+      <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+      <div className="price-and-ratings">
+        <div className="prices">
+          <span className="price old">10.00</span>
+          <span className="price sale">5.00</span>
+        </div>
 
-    <div class="buttons">
-      <button class="add-to-cart">
-        <shoppingCartIcon />
-        <span>Add to cart</span>
-      </button>
+        <div className="ratings">
+          <div className="rating">
+            <starIcon />
+            <span className="rating-float">4.95</span>
+            <span className="rating-count">(73)</span>
+          </div>
+          <span className="sold-a-lot">500+ sold this week</span>
+        </div>
+      </div>
+    </section>
 
-      <button class="details">
-        <horizontalEllipsisIcon />
-      </button>
-    </div>
+    <footer>
+      <div className="colors">
+        <button onclick="setColor('Gray')" class="color"></button>
+        <button onclick="setColor('Brown')" class="color"></button>
+        <button onclick="setColor('Blue')" class="color"></button>
+        <button onclick="setColor('Black')" class="color active"></button>
+      </div>
+
+      <div className="buttons">
+        <button className="add-to-cart" disabled="{status.soldOut}">
+          <shoppingCartIcon />
+          <span>Add to cart</span>
+        </button>
+
+        <button className="details">
+          <horizontalEllipsisIcon />
+        </button>
+      </div>
+    </footer>
   </div>
 </a>
