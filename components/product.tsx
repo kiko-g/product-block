@@ -11,9 +11,6 @@ export function Product() {
       <div className="image-wrapper">
         <div className="floating top-left">
           <span className="badge new">New</span>
-        </div>
-
-        <div className="floating bottom-right">
           <span className="badge sale">-20%</span>
         </div>
 

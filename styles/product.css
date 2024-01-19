@@ -7,7 +7,7 @@
 }
 
 .product-block > .image-wrapper > .floating {
-  @apply absolute flex flex-col;
+  @apply absolute m-2 flex flex-col gap-y-1.5;
 }
 
 .product-block > .image-wrapper > .floating.top-left {
@@ -27,23 +27,23 @@
 }
 
 .product-block > .image-wrapper > .floating > span.badge {
-  @apply z-10 h-full w-full px-2 py-2 text-center text-xs font-medium tracking-tighter text-white;
+  @apply z-10 h-full w-full rounded-md px-1.5 py-1.5 text-center text-xs font-medium tracking-tighter text-white;
 }
 
 .product-block > .image-wrapper > .floating > span.badge.sale {
-  @apply bg-rose-600;
+  @apply border border-rose-800 bg-rose-700/90;
 }
 
 .product-block > .image-wrapper > .floating > span.badge.new {
-  @apply bg-lime-500;
+  @apply border border-lime-700 bg-lime-600/90;
 }
 
 .product-block > .image-wrapper > .floating > span.badge.hot {
-  @apply bg-orange-500;
+  @apply border border-orange-600 bg-orange-500/90;
 }
 
 .product-block > .image-wrapper > .floating > span.badge.sold-out {
-  @apply bg-gray-500;
+  @apply border border-gray-600 bg-gray-500/90;
 }
 
 .product-block > .image-wrapper > img {

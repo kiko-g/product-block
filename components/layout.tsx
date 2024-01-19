@@ -96,7 +96,7 @@ function Header() {
   const { pathname } = router;
 
   return (
-    <div className="flex w-full items-center justify-between gap-x-3 border-b bg-white px-4 py-4 dark:bg-gray-950">
+    <div className="flex w-full items-center justify-between gap-x-3 border-b border-black/10 bg-white px-4 py-4 dark:border-white/10 dark:bg-[#131720]">
       <div className="flex flex-1 items-center gap-x-2">
         {navigation.map((item) => (
           <Link
@@ -128,11 +128,7 @@ export function Layout({ children, title }: { children: React.ReactNode; title: 
         <title>Product Block | {title}</title>
       </Head>
 
-      <main
-        className={clsx(
-          "relative flex min-h-screen w-screen flex-col items-center justify-between bg-slate-50 text-gray-800 dark:bg-gray-900 dark:text-white",
-        )}
-      >
+      <main className="relative flex min-h-screen w-screen flex-col items-center justify-between bg-slate-50 text-gray-800 dark:bg-[#181e2a] dark:text-white">
         <Header />
         <div className="flex w-full flex-1 items-center">{children}</div>
       </main>

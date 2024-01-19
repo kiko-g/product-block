@@ -6,9 +6,7 @@ import { Select } from "@/components/inputs";
 import { Layout } from "@/components/layout";
 
 export default function Home() {
-  const colors: Color[] = ["Gray", "Brown", "Blue", "Black"];
   const [color, setColor] = useState<Color>("Black");
-
   const [cycleImageOnHover, setCycleImageOnHover] = React.useState(true);
   const [fontSize, setFontSize] = React.useState<Size>("md");
   const [borderRadius, setBorderRadius] = React.useState<SizeAndNull>("md");
@@ -73,10 +71,10 @@ export default function Home() {
               </div>
 
               <div className="colors">
-                {colors.map((x, i) => (
+                {["Gray", "Brown", "Blue", "Black"].map((x, i) => (
                   <button
                     key={`color-${x}-${i}`}
-                    onClick={() => setColor(x)}
+                    onClick={() => setColor(x as Color)}
                     className={clsx(
                       "color",
                       color === x ? "active" : "",
