@@ -1,25 +1,28 @@
 import React, { useState } from "react";
-import { Tab } from "@headlessui/react";
 import clsx from "clsx";
+import { productBlockCssString, productBlockHtmlString } from "@/utils";
+import { Tab } from "@headlessui/react";
+
 import { Layout } from "@/components/layout";
 import { Product } from "@/components/product";
+import { CodeShowcase } from "@/components/CodeShowcase";
 
 export default function ProductBlockPage() {
   const tabs = [
     {
       name: "Cards",
-      component: Cards,
+      component: CardsTab,
     },
     {
       name: "Code",
-      component: Code,
+      component: CodeTab,
     },
   ];
 
   return (
     <Layout title="Demo">
       <Tab.Group>
-        <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col items-start space-y-4 self-stretch p-6 lg:p-8">
+        <div className="mx-auto flex w-full max-w-full flex-1 flex-col items-start space-y-4 self-stretch p-6 lg:p-8">
           <Tab.List className="flex w-full items-center justify-start gap-4">
             {tabs.map((tab) => (
               <Tab
@@ -51,7 +54,7 @@ export default function ProductBlockPage() {
   );
 }
 
-function Cards() {
+function CardsTab() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-8 lg:flex-row">
       <Product
@@ -93,10 +96,11 @@ function Cards() {
   );
 }
 
-function Code() {
+function CodeTab() {
   return (
-    <div>
-      <div></div>
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+      <CodeShowcase language="html" code={productBlockHtmlString} />
+      <CodeShowcase language="css" code={productBlockCssString} />
     </div>
   );
 }
