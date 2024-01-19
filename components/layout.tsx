@@ -24,7 +24,7 @@ export function Layout({ children, title }: { children: React.ReactNode; title: 
 
       <main className="relative flex min-h-screen w-screen flex-col items-center justify-between bg-slate-50 text-gray-800 dark:bg-[#181e2a] dark:text-white">
         <Header />
-        <div className="flex w-full flex-1 items-center">{children}</div>
+        <div className="flex w-full flex-1 items-start">{children}</div>
       </main>
     </>
   );
