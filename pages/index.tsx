@@ -55,43 +55,57 @@ export default function ProductBlockPage() {
 }
 
 function CardsTab() {
+  const products = [
+    {
+      status: {
+        new: true,
+        soldOut: false,
+        hot: false,
+        sale: {
+          active: true,
+          percent: 20,
+        },
+      },
+    },
+    {
+      status: {
+        new: false,
+        soldOut: true,
+        hot: false,
+        sale: {
+          active: false,
+          percent: 50,
+        },
+      },
+    },
+    {
+      status: {
+        new: false,
+        soldOut: false,
+        hot: true,
+        sale: {
+          active: true,
+          percent: 50,
+        },
+      },
+    },
+    {
+      status: {
+        new: false,
+        soldOut: false,
+        hot: false,
+        sale: {
+          active: false,
+          percent: 50,
+        },
+      },
+    },
+  ];
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-8 lg:flex-row">
-      <Product
-        status={{
-          new: true,
-          soldOut: false,
-          hot: false,
-          sale: {
-            active: true,
-            percent: 20,
-          },
-        }}
-      />
-
-      <Product
-        status={{
-          new: false,
-          soldOut: true,
-          hot: false,
-          sale: {
-            active: false,
-            percent: 50,
-          },
-        }}
-      />
-
-      <Product
-        status={{
-          new: false,
-          soldOut: false,
-          hot: true,
-          sale: {
-            active: true,
-            percent: 50,
-          },
-        }}
-      />
+      {products.map((product, productIdx) => (
+        <Product key={`product-${productIdx}`} status={product.status} />
+      ))}
     </div>
   );
 }
