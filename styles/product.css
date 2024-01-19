@@ -50,6 +50,10 @@
   @apply block w-full transition-all hover:scale-110;
 }
 
+.product-block > .image-wrapper > img.sold-out {
+  @apply grayscale filter;
+}
+
 .product-block > .caption {
   @apply relative px-3 pb-6 pt-3 transition hover:bg-slate-400/5 dark:hover:bg-white/5;
 }
@@ -115,7 +119,7 @@
 }
 
 .product-block > .caption > .buttons > button {
-  @apply flex items-center justify-center gap-x-1 rounded px-3 py-2 text-sm font-medium tracking-tighter transition-all duration-200 ease-in-out;
+  @apply flex items-center justify-center gap-x-1 rounded px-3 py-2 text-sm font-medium tracking-tighter transition-all duration-200 ease-in-out disabled:cursor-not-allowed disabled:opacity-40;
 }
 
 .product-block > .caption > .buttons > button.add-to-cart {
