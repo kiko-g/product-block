@@ -16,10 +16,13 @@ const navigation = [
 ];
 
 export function Layout({ children, title }: { children: React.ReactNode; title: string }) {
+  const siteName = "Product Block";
+  const renderedTitle = title ? `${siteName}: ${title}` : siteName;
+
   return (
     <>
       <Head>
-        <title>Product Block | {title}</title>
+        <title>{renderedTitle}</title>
       </Head>
 
       <main className="relative flex min-h-screen w-screen flex-col items-center justify-between bg-slate-50 text-gray-800 dark:bg-[#181e2a] dark:text-white">
