@@ -21,11 +21,13 @@ export function CodeShowcase({ code, language }: { code: string; language: strin
       <SyntaxHighlighter
         language={language}
         style={coldarkDark}
+        wrapLongLines
         customStyle={{
-          backgroundColor: "#0e131f",
+          backgroundColor: "#222430",
           borderRadius: "0.75rem",
           maxHeight: "600px",
           margin: "0",
+          fontSize: "0.8rem",
         }}
       >
         {code}
