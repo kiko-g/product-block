@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import clsx from "clsx";
+import type { ProductType } from "@/types";
 import { productBlockCssString, productBlockHtmlString } from "@/utils";
-import { Tab } from "@headlessui/react";
 
+import { Tab } from "@headlessui/react";
 import { Layout } from "@/components/layout";
 import { Product } from "@/components/product";
 import { CodeShowcase } from "@/components/CodeShowcase";
@@ -55,9 +56,16 @@ export default function ProductBlockPage() {
 }
 
 function CardsTab() {
-  const products = [
+  const products: ProductType[] = [
     {
-      status: {
+      info: {
+        title: "Product A",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        price: 100,
+        ratingAvg: 4.78,
+        ratingCount: 839,
+        image:
+          "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800",
         new: true,
         soldOut: false,
         hot: false,
@@ -68,18 +76,32 @@ function CardsTab() {
       },
     },
     {
-      status: {
+      info: {
+        title: "Product B",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        price: 50,
+        ratingAvg: 4.83,
+        ratingCount: 211,
+        image:
+          "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800",
         new: false,
         soldOut: true,
         hot: false,
         sale: {
           active: false,
-          percent: 50,
+          percent: 35,
         },
       },
     },
     {
-      status: {
+      info: {
+        title: "Product C",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        price: 25,
+        ratingAvg: 4.45,
+        ratingCount: 14,
+        image:
+          "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800",
         new: false,
         soldOut: false,
         hot: true,
@@ -90,7 +112,14 @@ function CardsTab() {
       },
     },
     {
-      status: {
+      info: {
+        title: "Product D",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        price: 40,
+        ratingAvg: 4.81,
+        ratingCount: 1344,
+        image:
+          "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800",
         new: false,
         soldOut: false,
         hot: false,
@@ -104,7 +133,7 @@ function CardsTab() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-8 lg:flex-row">
       {products.map((product, productIdx) => (
-        <Product key={`product-${productIdx}`} status={product.status} />
+        <Product key={`product-${productIdx}`} product={product} />
       ))}
     </div>
   );

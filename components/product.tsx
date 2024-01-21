@@ -1,33 +1,24 @@
 import React, { useState } from "react";
 import clsx from "clsx";
-import type { Color, ProductStatus } from "@/types";
+import type { Color, ProductType } from "@/types";
 
-type ProductType = {
-  status: ProductStatus;
-};
-
-export function Product({ status }: ProductType) {
+export function Product({ product }: { product: ProductType }) {
   const colors: Color[] = ["Gray", "Brown", "Blue", "Black"];
   const [color, setColor] = useState<Color>("Gray");
 
-  const price = 10.0;
-  const priceWithDiscount = price - (price * status.sale.percent) / 100;
+  const priceWithDiscount = product.info.price - (product.info.price * product.info.sale.percent) / 100;
 
   return (
     <a href="#" className="product-block">
       <div className="image-wrapper">
         <div className="floating top-left">
-          {status.new && <span className="badge new">New</span>}
-          {status.sale.active && <span className="badge sale">-{status.sale.percent}%</span>}
-          {status.soldOut && <span className="badge sold-out">Sold Out</span>}
-          {status.hot && <span className="badge hot">Hot</span>}
+          {product.info.new && <span className="badge new">New</span>}
+          {product.info.sale.active && <span className="badge sale">-{product.info.sale.percent}%</span>}
+          {product.info.soldOut && <span className="badge sold-out">Sold Out</span>}
+          {product.info.hot && <span className="badge hot">Hot</span>}
         </div>
 
-        <img
-          alt="Product A1"
-          className={clsx(status.soldOut ? "sold-out" : "")}
-          src="https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800"
-        />
+        <img alt="Product A1" className={clsx(product.info.soldOut ? "sold-out" : "")} src={product.info.image} />
       </div>
 
       <div className="caption group">
@@ -46,12 +37,12 @@ export function Product({ status }: ProductType) {
             </svg>
           </div>
 
-          <h3 className="name">Product A</h3>
-          <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+          <h3 className="name">{product.info.title}</h3>
+          <p className="description">{product.info.description}</p>
           <div className="price-and-ratings">
             <div className="prices">
-              <span className="price old">{price.toFixed(2)}$</span>
-              {status.sale.active && <span className="price sale">{priceWithDiscount.toFixed(2)}$</span>}
+              <span className="price old">{product.info.price.toFixed(2)}$</span>
+              {product.info.sale.active && <span className="price sale">{priceWithDiscount.toFixed(2)}$</span>}
             </div>
 
             <div className="ratings">
@@ -65,10 +56,10 @@ export function Product({ status }: ProductType) {
                 >
                   <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                 </svg>
-                <span className="rating-float">4.95</span>
-                <span className="rating-count">(73)</span>
+                <span className="rating-float">{product.info.ratingAvg.toFixed(2)}</span>
+                <span className="rating-count">({product.info.ratingCount})</span>
               </div>
-              {status.hot && <span className="sold-a-lot">500+ sold this week</span>}
+              {product.info.hot && <span className="sold-a-lot">500+ sold</span>}
             </div>
           </div>
         </section>
@@ -92,7 +83,7 @@ export function Product({ status }: ProductType) {
           </div>
 
           <div className="buttons">
-            <button className="add-to-cart" disabled={status.soldOut}>
+            <button className="add-to-cart" disabled={product.info.soldOut}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

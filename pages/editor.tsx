@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { Alignment, BadgePosition, Color, Size } from "@/types";
+import type { Alignment, BadgePosition, Color, ProductType, Size } from "@/types";
 
 import { Select } from "@/components/inputs";
 import { Layout } from "@/components/layout";
@@ -15,13 +15,28 @@ export default function Home() {
   const [badgePosition, setBadgePosition] = React.useState<BadgePosition>("top-left");
   const [hoverEffect, setHoverEffect] = React.useState(true);
 
-  const productStatus = {
-    new: true,
-    soldOut: false,
-    hot: true,
-    sale: {
-      active: true,
-      percent: 30,
+  const defaultProduct: ProductType = {
+    info: {
+      new: true,
+      soldOut: false,
+      hot: true,
+      sale: {
+        active: true,
+        percent: 30,
+      },
+    },
+    options: {},
+  };
+
+  const product: ProductType = {
+    info: {
+      new: true,
+      soldOut: false,
+      hot: true,
+      sale: {
+        active: true,
+        percent: 30,
+      },
     },
   };
 
@@ -29,7 +44,7 @@ export default function Home() {
     <Layout title="Editor">
       <div className="grid w-full flex-1 grid-cols-1 divide-x divide-gray-200 self-stretch lg:grid-cols-2">
         <article className="mt-4 flex h-full w-full items-center justify-center p-4 lg:mt-0 lg:p-16">
-          <Product status={productStatus} />
+          <Product product={product} />
         </article>
 
         <aside className="flex h-full w-full items-center border-gray-300 p-4 dark:border-gray-700 lg:p-16">

@@ -103,7 +103,7 @@ a.product-block > div.caption > section > div.price-and-ratings > div.ratings {
 }
 
 a.product-block > div.caption > section > div.price-and-ratings > div.ratings > div.rating {
-  @apply flex items-center gap-x-1 hover:underline;
+  @apply flex items-center gap-x-1 tracking-tight hover:underline;
 }
 
 a.product-block > div.caption > section > div.price-and-ratings > div.ratings > div.rating > svg.star {
@@ -111,11 +111,11 @@ a.product-block > div.caption > section > div.price-and-ratings > div.ratings > 
 }
 
 a.product-block > div.caption > section > div.price-and-ratings > div.ratings > div.rating > span.rating-float {
-  @apply text-base font-semibold text-gray-900 dark:text-white;
+  @apply text-base font-medium text-gray-900 dark:text-white;
 }
 
 a.product-block > div.caption > section > div.price-and-ratings > div.ratings > div.rating > span.rating-count {
-  @apply text-base font-semibold text-gray-900 dark:text-white;
+  @apply text-base font-medium text-gray-900 dark:text-white;
 }
 
 a.product-block > div.caption > section > div.price-and-ratings > div.ratings > span.sold-a-lot {
