@@ -17,12 +17,19 @@ export default function Home() {
 
   const defaultProduct: ProductType = {
     info: {
-      new: true,
+      title: "Product A",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      price: 100,
+      ratingAvg: 0,
+      ratingCount: 0,
+      colors: ["#000000", "#ff0000"],
+      image: "https://source.unsplash.com/random/800x800?gray",
+      new: false,
       soldOut: false,
-      hot: true,
+      hot: false,
       sale: {
-        active: true,
-        percent: 30,
+        active: false,
+        percent: 15,
       },
     },
     options: {},
@@ -30,12 +37,20 @@ export default function Home() {
 
   const product: ProductType = {
     info: {
+      title: "Product A",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      price: 100,
+      ratingAvg: 4.78,
+      ratingCount: 839,
+      colors: ["#000000", "#00ff00"],
+      image:
+        "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800",
       new: true,
       soldOut: false,
-      hot: true,
+      hot: false,
       sale: {
         active: true,
-        percent: 30,
+        percent: 20,
       },
     },
   };

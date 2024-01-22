@@ -59,11 +59,12 @@ function CardsTab() {
   const products: ProductType[] = [
     {
       info: {
-        title: "Product A",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        price: 100,
-        ratingAvg: 4.78,
-        ratingCount: 839,
+        title: "Product Title",
+        description: "Product description text.",
+        price: 10,
+        ratingAvg: 0,
+        ratingCount: 0,
+        colors: ["#000000", "#ff0000"],
         image:
           "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800",
         new: true,
@@ -82,6 +83,7 @@ function CardsTab() {
         price: 50,
         ratingAvg: 4.83,
         ratingCount: 211,
+        colors: ["#000000", "#ff0000"],
         image:
           "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800",
         new: false,
@@ -100,6 +102,7 @@ function CardsTab() {
         price: 25,
         ratingAvg: 4.45,
         ratingCount: 14,
+        colors: ["#000000", "#ff0000"],
         image:
           "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800",
         new: false,
@@ -118,6 +121,7 @@ function CardsTab() {
         price: 40,
         ratingAvg: 4.81,
         ratingCount: 1344,
+        colors: ["#000000", "#ff0000"],
         image:
           "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800",
         new: false,

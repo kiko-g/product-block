@@ -6,7 +6,7 @@ export type ProductType = {
     image: string;
     ratingAvg: number;
     ratingCount: number;
-
+    colors: ColorHex[];
     new: boolean;
     hot: boolean;
     soldOut: boolean;

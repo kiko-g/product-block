@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import clsx from "clsx";
-import type { Color, ProductType } from "@/types";
+import type { ColorHex, ProductType } from "@/types";
 
 export function Product({ product }: { product: ProductType }) {
-  const colors: Color[] = ["Gray", "Brown", "Blue", "Black"];
-  const [color, setColor] = useState<Color>("Gray");
+  const [color, setColor] = useState<ColorHex>(product.info.colors[0]);
 
   const priceWithDiscount = product.info.price - (product.info.price * product.info.sale.percent) / 100;
 
@@ -66,18 +65,12 @@ export function Product({ product }: { product: ProductType }) {
 
         <footer>
           <div className="colors">
-            {colors.map((x, i) => (
+            {product.info.colors.map((x, i) => (
               <button
                 key={`color-${x}-${i}`}
                 onClick={() => setColor(x)}
-                className={clsx(
-                  "color",
-                  color === x ? "active" : "",
-                  x === "Black" ? "border border-black bg-black/70" : "",
-                  x === "Blue" ? "border border-blue-400 bg-blue-400/70" : "",
-                  x === "Brown" ? "border border-[#b87b58] bg-[#b87b58]/70" : "",
-                  x === "Gray" ? "border border-gray-500 bg-gray-500/70" : "",
-                )}
+                style={{ backgroundColor: `${x}99`, borderColor: x }}
+                className={clsx("color", color === x ? "active" : "")}
               ></button>
             ))}
           </div>

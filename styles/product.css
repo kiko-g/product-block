@@ -127,7 +127,7 @@ a.product-block > div.caption > footer > div.colors {
 }
 
 a.product-block > div.caption > footer > div.colors > button.color {
-  @apply h-6 w-6 rounded-full transition-all duration-200 ease-in-out hover:opacity-80;
+  @apply h-6 w-6 rounded-full border transition-all duration-200 ease-in-out hover:opacity-80;
 }
 
 a.product-block > div.caption > footer > div.colors > button.color.active {

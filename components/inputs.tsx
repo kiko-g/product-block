@@ -13,7 +13,7 @@ export function Select({
 
   return (
     <div className="flex flex-col">
-      <label className="mb-1 text-sm font-medium">
+      <label className="mb-1 whitespace-nowrap text-sm font-medium">
         <span>{label}</span>
       </label>
       <select
