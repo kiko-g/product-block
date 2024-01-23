@@ -57,12 +57,12 @@ export default function Home() {
 
   return (
     <Layout title="Editor">
-      <div className="grid w-full flex-1 grid-cols-1 divide-x divide-gray-200 self-stretch lg:grid-cols-2">
-        <article className="mt-4 flex h-full w-full items-center justify-center p-4 lg:mt-0 lg:p-16">
+      <div className="grid w-full flex-1 grid-cols-1 divide-x divide-gray-200 self-stretch md:grid-cols-2">
+        <article className="mt-4 flex h-full w-full items-center justify-center p-4 md:mt-0 md:p-16">
           <Product product={product} />
         </article>
 
-        <aside className="flex h-full w-full items-center border-gray-300 p-4 dark:border-gray-700 lg:p-16">
+        <aside className="flex h-full w-full items-center border-gray-300 p-4 dark:border-gray-700 md:p-16">
           {/* Options */}
           <div className="mx-auto grid w-full grid-cols-3 gap-8">
             <Select

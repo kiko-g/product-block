@@ -1,5 +1,5 @@
 a.product-block {
-  @apply flex w-full flex-col self-stretch overflow-hidden rounded border-0 border-gray-300 bg-white shadow-xl transition-all dark:border-gray-700 dark:bg-gray-800 lg:w-80;
+  @apply flex w-full flex-col self-stretch overflow-hidden rounded border-0 border-gray-300 bg-white shadow-xl transition-all dark:border-gray-700 dark:bg-gray-800 md:w-64;
 }
 
 a.product-block > .image-wrapper {
@@ -99,7 +99,7 @@ a.product-block > div.caption > section > div.price-and-ratings > div.prices > s
 }
 
 a.product-block > div.caption > section > div.price-and-ratings > div.ratings {
-  @apply flex flex-col items-end;
+  @apply flex flex-col items-end text-xs;
 }
 
 a.product-block > div.caption > section > div.price-and-ratings > div.ratings > div.rating {
@@ -107,19 +107,19 @@ a.product-block > div.caption > section > div.price-and-ratings > div.ratings > 
 }
 
 a.product-block > div.caption > section > div.price-and-ratings > div.ratings > div.rating > svg.star {
-  @apply h-4 w-4 text-amber-300;
+  @apply mr-[1px] h-3 w-3 fill-amber-300 stroke-amber-500;
 }
 
 a.product-block > div.caption > section > div.price-and-ratings > div.ratings > div.rating > span.rating-float {
-  @apply text-base font-medium text-gray-900 dark:text-white;
+  @apply font-semibold text-gray-900 dark:text-white;
 }
 
 a.product-block > div.caption > section > div.price-and-ratings > div.ratings > div.rating > span.rating-count {
-  @apply text-base font-medium text-gray-900 dark:text-white;
+  @apply font-semibold text-gray-900 dark:text-white;
 }
 
 a.product-block > div.caption > section > div.price-and-ratings > div.ratings > span.sold-a-lot {
-  @apply text-sm font-bold tracking-tight text-gray-500 hover:underline dark:text-gray-400;
+  @apply font-bold tracking-tight text-gray-500 hover:underline dark:text-gray-400;
 }
 
 a.product-block > div.caption > footer > div.colors {
@@ -143,9 +143,9 @@ a.product-block > div.caption > footer > div.buttons > button {
 }
 
 a.product-block > div.caption > footer > div.buttons > button.add-to-cart {
-  @apply flex-1 bg-emerald-600 text-white hover:bg-emerald-700;
+  @apply flex-1 bg-emerald-600 text-white enabled:hover:bg-emerald-700;
 }
 
 a.product-block > div.caption > footer > div.buttons > button.details {
-  @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
+  @apply bg-gray-100 text-gray-700 enabled:hover:bg-gray-200;
 }

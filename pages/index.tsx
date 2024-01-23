@@ -23,14 +23,14 @@ export default function ProductBlockPage() {
   return (
     <Layout title="Demo">
       <Tab.Group>
-        <div className="mx-auto flex w-full max-w-full flex-1 flex-col items-start space-y-4 self-stretch p-6 lg:p-8">
+        <div className="mx-auto flex w-full max-w-full flex-1 flex-col items-start space-y-4 self-stretch p-6 md:p-8">
           <Tab.List className="flex w-full items-center justify-start gap-4">
             {tabs.map((tab) => (
               <Tab
                 key={tab.name}
                 className={({ selected }) =>
                   clsx(
-                    "rounded px-3 py-2 text-sm font-medium transition",
+                    "rounded px-3 py-2 text-sm transition",
                     selected
                       ? "bg-slate-700 text-white dark:bg-white/10 dark:text-white"
                       : "hover:bg-slate-700/10 dark:hover:bg-white/5",
@@ -42,7 +42,7 @@ export default function ProductBlockPage() {
             ))}
           </Tab.List>
 
-          <Tab.Panels>
+          <Tab.Panels className="w-full">
             {tabs.map((tab) => (
               <Tab.Panel key={tab.name}>
                 <tab.component />
@@ -134,8 +134,9 @@ function CardsTab() {
       },
     },
   ];
+
   return (
-    <div className="flex flex-1 flex-col items-center justify-center gap-8 lg:flex-row">
+    <div className="flex flex-1 flex-col flex-wrap items-center justify-start gap-6 self-stretch md:flex-row">
       {products.map((product, productIdx) => (
         <Product key={`product-${productIdx}`} product={product} />
       ))}
@@ -145,7 +146,7 @@ function CardsTab() {
 
 function CodeTab() {
   return (
-    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       <CodeShowcase language="html" code={productBlockHtmlString} />
       <CodeShowcase language="css" code={productBlockCssString} />
     </div>
