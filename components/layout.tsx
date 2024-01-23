@@ -3,15 +3,20 @@ import clsx from "clsx";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { RectangleGroupIcon, Square3Stack3DIcon } from "@heroicons/react/24/outline";
 
-const navigation = [
+const navigations = [
   {
     name: "Product",
     href: "/",
+    icon: Square3Stack3DIcon,
+    shown: true,
   },
   {
     name: "Editor",
     href: "/editor",
+    icon: RectangleGroupIcon,
+    shown: true,
   },
 ];
 
@@ -25,11 +30,56 @@ export function Layout({ children, title }: { children: React.ReactNode; title: 
         <title>{renderedTitle}</title>
       </Head>
 
-      <main className="relative flex min-h-screen w-screen flex-col items-center justify-between bg-slate-50 text-gray-800 dark:bg-[#181e2a] dark:text-white">
-        <Header />
-        <div className="flex w-full flex-1 items-start">{children}</div>
+      <main className="relative flex min-h-screen w-screen items-center justify-between bg-slate-50 text-gray-800 dark:bg-[#181e2a] dark:text-white">
+        <Sidebar />
+        <div className="flex w-full flex-1 items-start self-stretch">{children}</div>
       </main>
     </>
+  );
+}
+
+function Sidebar() {
+  const router = useRouter();
+  const { pathname } = router;
+
+  return (
+    <aside className="hidden h-full min-h-screen min-w-full shrink-0 flex-col space-y-4 self-stretch border-black/10 bg-white px-4 py-4 dark:border-white/10 dark:bg-[#131720] lg:flex lg:min-w-[16rem]">
+      <ul className="flex w-full flex-1 flex-col space-y-2">
+        {navigations
+          .filter((item) => item.shown !== false)
+          .map((item, itemIdx) => {
+            const isActive = pathname === item.href;
+
+            return (
+              <li key={`nav-${itemIdx}`}>
+                <Link
+                  title={item.name}
+                  href={item.href}
+                  className={clsx(
+                    isActive
+                      ? "bg-slate-600 text-white hover:opacity-80 dark:bg-slate-500/80"
+                      : "hover:bg-slate-600/10 dark:hover:bg-slate-500/30",
+                    `flex cursor-pointer items-center justify-center gap-2 rounded px-3 py-3 text-sm transition ease-in-out xl:justify-start`,
+                  )}
+                >
+                  <item.icon className="h-5 w-5" />
+                  <span className="hidden md:block">{item.name}</span>
+                </Link>
+              </li>
+            );
+          })}
+      </ul>
+      <hr />
+      <div className="flex flex-col items-center justify-between gap-3 xl:flex-row">
+        <div className="flex w-full items-center justify-start gap-x-2.5">
+          <DarkModeSwitch />
+        </div>
+
+        <div className="flex items-center gap-x-2">
+          <GitHubLink />
+        </div>
+      </div>
+    </aside>
   );
 }
 
@@ -40,7 +90,7 @@ function Header() {
   return (
     <div className="flex w-full items-center justify-between gap-x-3 border-b border-black/10 bg-white px-4 py-4 dark:border-white/10 dark:bg-[#131720]">
       <div className="flex flex-1 items-center gap-x-2">
-        {navigation.map((item) => (
+        {navigations.map((item) => (
           <Link
             key={item.name}
             href={item.href}

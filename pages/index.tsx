@@ -97,7 +97,7 @@ export default function ProductBlockPage() {
   return (
     <Layout title="Demo">
       <Tab.Group>
-        <div className="mx-auto flex w-full max-w-full flex-1 flex-col items-start space-y-4 self-stretch p-6 md:p-8">
+        <div className="mx-auto flex w-full max-w-full flex-1 flex-col items-start space-y-4 self-stretch p-4 md:p-6">
           <Tab.List className="flex w-full items-center justify-start gap-4 rounded bg-white p-4 dark:bg-white/5">
             {tabs.map((tab) => (
               <Tab
@@ -137,7 +137,7 @@ function CardsTab() {
           <h3 className="mb-3 text-4xl font-extrabold">
             {sectionIdx + 1}. {section.name}
           </h3>
-          <div className="flex flex-1 flex-col flex-wrap items-center justify-start gap-6 self-stretch md:flex-row">
+          <div className="flex flex-1 flex-col flex-wrap items-center justify-start gap-5 self-stretch md:flex-row">
             {section.products.map((product, productIdx) => (
               <Product key={`product-${productIdx}`} product={product} />
             ))}
