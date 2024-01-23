@@ -98,22 +98,6 @@ div.product-block > div.caption > a > div.price-and-ratings.across {
   @apply flex-row justify-between;
 }
 
-div.product-block > div.caption > a > div.price-and-ratings > div.prices {
-  @apply flex flex-col gap-y-1.5 text-base;
-}
-
-div.product-block > div.caption > a > div.price-and-ratings > div.prices > span.price {
-  @apply w-min font-semibold leading-none tracking-tight;
-}
-
-div.product-block > div.caption > a > div.price-and-ratings > div.prices > span.price.old {
-  @apply font-medium leading-none line-through;
-}
-
-div.product-block > div.caption > a > div.price-and-ratings > div.prices > span.price.sale {
-  @apply text-lg font-semibold leading-none tracking-tight text-rose-500 hover:underline;
-}
-
 div.product-block > div.caption > a > div.price-and-ratings > div.ratings {
   @apply flex flex-col items-start text-xs;
 }
@@ -142,6 +126,22 @@ div.product-block > div.caption > a > div.price-and-ratings > div.ratings > span
   @apply font-bold tracking-tight text-gray-500 hover:underline dark:text-gray-400;
 }
 
+div.product-block > div.caption > a > div.price-and-ratings > div.prices {
+  @apply flex flex-col gap-y-1.5 text-base;
+}
+
+div.product-block > div.caption > a > div.price-and-ratings > div.prices > span.price {
+  @apply w-min font-semibold leading-none tracking-tight;
+}
+
+div.product-block > div.caption > a > div.price-and-ratings > div.prices > span.price.old {
+  @apply font-medium line-through;
+}
+
+div.product-block > div.caption > a > div.price-and-ratings > div.prices > span.price.sale {
+  @apply text-lg font-semibold tracking-tight text-rose-500 hover:underline;
+}
+
 div.product-block > div.caption > div.product-footer {
   @apply px-3 pb-4;
 }
@@ -164,6 +164,10 @@ div.product-block > div.caption > div.product-footer > div.buttons {
 
 div.product-block > div.caption > div.product-footer > div.buttons > button {
   @apply flex items-center justify-center gap-x-1 rounded px-3 py-2 text-sm font-medium tracking-tighter transition-all duration-200 ease-in-out disabled:cursor-not-allowed disabled:opacity-40;
+}
+
+div.product-block > div.caption > div.product-footer > div.buttons > button svg {
+  @apply h-5 w-5;
 }
 
 div.product-block > div.caption > div.product-footer > div.buttons > button.add-to-cart {
