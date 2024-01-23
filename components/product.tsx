@@ -2,26 +2,31 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import type { ColorHex, ProductType } from "@/types";
 
-export function Product({ product }: { product: ProductType }) {
+type ProductProps = {
+  product: ProductType;
+  wrapperClassName?: string;
+};
+
+export function Product({ product, wrapperClassName }: ProductProps) {
   const [color, setColor] = useState<ColorHex>(product.info.colors[0]);
 
+  const productId = product.info.title.replace(/\s/g, "-").toLowerCase();
   const priceWithDiscount = product.info.price - (product.info.price * product.info.sale.percent) / 100;
 
   return (
-    <div className="product-block">
-      <a className="image-wrapper" href="#link-from-image-wrapper">
+    <div className={clsx("product-block", wrapperClassName)}>
+      <a className="image-wrapper" href={`#link-from-image-wrapper-${productId}`}>
         <div className="floating top-left">
           {product.info.new && <span className="badge new">New</span>}
           {product.info.sale.active && <span className="badge sale">-{product.info.sale.percent}%</span>}
           {product.info.soldOut && <span className="badge sold-out">Sold Out</span>}
-          {product.info.hot && <span className="badge hot">Hot</span>}
         </div>
 
         <img alt="Product A1" className={clsx(product.info.soldOut ? "sold-out" : "")} src={product.info.image} />
       </a>
 
       <div className="caption">
-        <a href="#link-from-caption">
+        <section>
           <div className="caption-headline">
             <span className="brand">{product.info.brand}</span>
             <svg
@@ -35,7 +40,9 @@ export function Product({ product }: { product: ProductType }) {
             </svg>
           </div>
 
-          <h3 className="title">{product.info.title}</h3>
+          <a className="title" href={`#link-from-title-${productId}`}>
+            {product.info.title}
+          </a>
           <p className="description">{product.info.description}</p>
           <div className="price-and-ratings">
             <div className="ratings">
@@ -59,7 +66,7 @@ export function Product({ product }: { product: ProductType }) {
               {product.info.sale.active && <span className="price sale">{priceWithDiscount.toFixed(2)}$</span>}
             </div>
           </div>
-        </a>
+        </section>
 
         <div className="product-footer">
           <div className="colors">
@@ -114,14 +121,19 @@ export function Product({ product }: { product: ProductType }) {
   );
 }
 
-export function CustomizedProduct({ product }: { product: ProductType }) {
+export function CustomizedProduct({ product, wrapperClassName }: ProductProps) {
   const [color, setColor] = useState<ColorHex>(product.info.colors[0]);
-
+  const productId = product.info.title.replace(/\s/g, "-").toLowerCase();
   const priceWithDiscount = product.info.price - (product.info.price * product.info.sale.percent) / 100;
 
   return (
-    <div className="flex w-full flex-col self-stretch overflow-hidden rounded border-0 border-gray-300 bg-[#fbfdfd] transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-gray-700 dark:bg-black/30 md:w-64">
-      <a className="relative overflow-hidden" href="#link-from-image-wrapper">
+    <div
+      className={clsx(
+        "flex w-full flex-col self-stretch overflow-hidden rounded border-0 border-gray-300 bg-[#f8fafa] transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-gray-700 dark:bg-black/30 md:w-64",
+        wrapperClassName,
+      )}
+    >
+      <a className="relative overflow-hidden" href={`#link-from-image-wrapper-${productId}`}>
         <div className="absolute left-0 top-0 m-2 flex flex-col gap-y-1.5">
           {product.info.new && <span className="badge new">New</span>}
           {product.info.sale.active && <span className="badge sale">-{product.info.sale.percent}%</span>}
@@ -137,7 +149,7 @@ export function CustomizedProduct({ product }: { product: ProductType }) {
       </a>
 
       <div className="group relative flex flex-1 flex-col justify-between">
-        <a href="#link-from-caption" className="px-3 pt-3">
+        <section className="px-3 pt-3">
           <div className="flex items-center justify-start gap-x-1.5">
             <span className="inline-flex text-base font-medium uppercase tracking-tighter text-gray-500 group-hover:opacity-100 dark:text-gray-400">
               {product.info.brand}
@@ -153,7 +165,12 @@ export function CustomizedProduct({ product }: { product: ProductType }) {
             </svg>
           </div>
 
-          <h3 className="w-min whitespace-nowrap text-xl font-bold hover:underline">{product.info.title}</h3>
+          <a
+            href={`#link-from-title-${productId}`}
+            className="w-min whitespace-nowrap text-xl font-bold hover:underline"
+          >
+            {product.info.title}
+          </a>
           <p className="h-16 overflow-clip text-sm tracking-tight">{product.info.description}</p>
           <div className="mb-5 mt-2 flex w-full flex-col justify-start gap-2">
             <div className="flex flex-col items-start text-xs">
@@ -188,7 +205,7 @@ export function CustomizedProduct({ product }: { product: ProductType }) {
               )}
             </div>
           </div>
-        </a>
+        </section>
 
         <div className="px-3 pb-4">
           <div className="mt-3 flex w-min items-center justify-between gap-x-2">
