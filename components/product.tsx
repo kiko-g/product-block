@@ -39,11 +39,6 @@ export function Product({ product }: { product: ProductType }) {
           <h3 className="name">{product.info.title}</h3>
           <p className="description">{product.info.description}</p>
           <div className="price-and-ratings">
-            <div className="prices">
-              <span className="price old">{product.info.price.toFixed(2)}$</span>
-              {product.info.sale.active && <span className="price sale">{priceWithDiscount.toFixed(2)}$</span>}
-            </div>
-
             <div className="ratings">
               <div className="rating">
                 <svg
@@ -58,7 +53,11 @@ export function Product({ product }: { product: ProductType }) {
                 <span className="rating-float">{product.info.ratingAvg.toFixed(2)}</span>
                 <span className="rating-count">({product.info.ratingCount})</span>
               </div>
-              {product.info.hot && <span className="sold-a-lot">500+ sold</span>}
+            </div>
+
+            <div className="prices">
+              <span className="price old">{product.info.price.toFixed(2)}$</span>
+              {product.info.sale.active && <span className="price sale">{priceWithDiscount.toFixed(2)}$</span>}
             </div>
           </div>
         </section>
@@ -69,7 +68,7 @@ export function Product({ product }: { product: ProductType }) {
               <button
                 key={`color-${x}-${i}`}
                 onClick={() => setColor(x)}
-                style={{ backgroundColor: `${x}99`, borderColor: x }}
+                style={{ backgroundColor: `${x}aa`, borderColor: x === "#ffffff" ? "#999" : x }}
                 className={clsx("color", color === x ? "active" : "")}
               ></button>
             ))}
