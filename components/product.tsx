@@ -8,8 +8,8 @@ export function Product({ product }: { product: ProductType }) {
   const priceWithDiscount = product.info.price - (product.info.price * product.info.sale.percent) / 100;
 
   return (
-    <a href="#" className="product-block">
-      <div className="image-wrapper">
+    <div className="product-block">
+      <a className="image-wrapper" href="#link-from-image-wrapper">
         <div className="floating top-left">
           {product.info.new && <span className="badge new">New</span>}
           {product.info.sale.active && <span className="badge sale">-{product.info.sale.percent}%</span>}
@@ -18,25 +18,18 @@ export function Product({ product }: { product: ProductType }) {
         </div>
 
         <img alt="Product A1" className={clsx(product.info.soldOut ? "sold-out" : "")} src={product.info.image} />
-      </div>
+      </a>
 
-      <div className="caption group">
-        <section>
+      <div className="caption">
+        <a className="caption-link" href="#link-from-caption">
           <div className="caption-headline">
-            <span className="brand">Brand</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="h-5 w-5 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-            >
+            <span className="brand">{product.info.brand}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" className="icon">
               <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
           </div>
 
-          <h3 className="name">{product.info.title}</h3>
+          <h3 className="title">{product.info.title}</h3>
           <p className="description">{product.info.description}</p>
           <div className="price-and-ratings">
             <div className="ratings">
@@ -60,9 +53,9 @@ export function Product({ product }: { product: ProductType }) {
               {product.info.sale.active && <span className="price sale">{priceWithDiscount.toFixed(2)}$</span>}
             </div>
           </div>
-        </section>
+        </a>
 
-        <footer>
+        <div className="product-footer">
           <div className="colors">
             {product.info.colors.map((x, i) => (
               <button
@@ -111,8 +104,8 @@ export function Product({ product }: { product: ProductType }) {
               </svg>
             </button>
           </div>
-        </footer>
+        </div>
       </div>
-    </a>
+    </div>
   );
 }

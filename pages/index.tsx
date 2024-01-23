@@ -22,10 +22,11 @@ const sections: SectionsWithProducts[] = [
           title: "Product A",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit quia aliquam vitae mattis nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit quia aliquam vitae mattis nisi.",
+          brand: "Brand A",
           price: 10,
           ratingAvg: 4.93,
           ratingCount: 1893,
-          colors: ["#30be9a", "#ff8822", "#2277dd", "#001122"],
+          colors: ["#30be9a", "#ff8822", "#2277dd", "#334455"],
           image:
             "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800",
           new: true,
@@ -41,6 +42,7 @@ const sections: SectionsWithProducts[] = [
         info: {
           title: "Product B",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          brand: "Brand B",
           price: 50,
           ratingAvg: 4.83,
           ratingCount: 211,
@@ -60,6 +62,7 @@ const sections: SectionsWithProducts[] = [
         info: {
           title: "Product C",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          brand: "Brand C",
           price: 25,
           ratingAvg: 4.45,
           ratingCount: 14,
