@@ -71,7 +71,7 @@ const sections: SectionsWithProducts[] = [
             "https://images.unsplash.com/photo-1536992266094-82847e1fd431?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDYwMzUzODk&ixlib=rb-4.0.3&q=80&w=800",
           new: false,
           soldOut: false,
-          hot: true,
+          hot: false,
           sale: {
             active: true,
             percent: 50,
