@@ -123,7 +123,11 @@ export function Product({ product, styleSuffix, wrapperClassName }: ProductProps
   );
 }
 
-export function CustomizedProduct({ product, wrapperClassName }: ProductProps) {
+type CustomizedProductProps = {
+  product: ProductType;
+};
+
+export function CustomizedProduct({ product }: CustomizedProductProps) {
   const [color, setColor] = useState<ColorHex>(product.info.colors[0]);
   const productId = product.info.title.replace(/\s/g, "-").toLowerCase();
   const priceWithDiscount = product.info.price - (product.info.price * product.info.sale.percent) / 100;
@@ -132,7 +136,6 @@ export function CustomizedProduct({ product, wrapperClassName }: ProductProps) {
     <div
       className={clsx(
         "flex w-full flex-col self-stretch overflow-hidden rounded border-0 border-gray-300 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-gray-700 dark:bg-black/30 md:w-64",
-        wrapperClassName,
       )}
     >
       <a className="relative overflow-hidden" href={`#link-from-image-wrapper-${productId}`}>
