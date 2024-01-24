@@ -43,7 +43,7 @@ function Sidebar() {
   const { pathname } = router;
 
   return (
-    <aside className="hidden min-w-full shrink-0 flex-col space-y-4 self-stretch border-black/10 bg-white px-4 py-4 dark:border-white/10 dark:bg-[#131720] lg:flex lg:min-w-[16rem]">
+    <aside className="hidden min-w-full shrink-0 flex-col space-y-4 self-stretch border-black/10 bg-white px-4 py-4 dark:border-white/10 dark:bg-[#131720] lg:flex lg:min-w-[14rem]">
       <ul className="top-0 flex w-full flex-1 flex-col space-y-2">
         {navigations
           .filter((item) => item.shown !== false)

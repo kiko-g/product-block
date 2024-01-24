@@ -14,8 +14,8 @@ const config: Config = {
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        serif: ["IBM Plex Sans", "serif"],
+        elegant: ["IBM Plex Sans", "serif"],
+        impact: ["Space Mono", "serif"],
       },
     },
   },

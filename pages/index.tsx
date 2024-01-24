@@ -15,6 +15,7 @@ type SectionsWithProducts = {
 
 const sections: SectionsWithProducts[] = [
   {
+    // https://source.unsplash.com/random/800x800?clotes
     name: "Basic",
     products: [
       {
@@ -101,6 +102,7 @@ const sections: SectionsWithProducts[] = [
     ],
   },
   {
+    // apple.com
     name: "Elegant",
     products: [
       {
@@ -175,6 +177,93 @@ const sections: SectionsWithProducts[] = [
           colors: ["#7722dd", "#dd4499", "#ff8866"],
           image:
             "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-studio-select-202306?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1684345161143",
+          new: false,
+          soldOut: false,
+          hot: false,
+          sale: {
+            active: true,
+            percent: 80,
+          },
+        },
+      },
+    ],
+  },
+  {
+    // https://source.unsplash.com/random/800x800?toys
+    name: "Impact",
+    products: [
+      {
+        info: {
+          title: "Product A",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit quia aliquam vitae mattis nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit quia aliquam vitae mattis nisi.",
+          brand: "Brand A",
+          price: 10,
+          ratingAvg: 4.93,
+          ratingCount: 1893,
+          colors: ["#bbb4a8", "#444b5b", "#ffffff", "#4d4e50"],
+          image:
+            "https://images.unsplash.com/photo-1609741199984-45b1c92bb0dd?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8dG95c3x8fHx8fDE3MDYwNTc2OTk&ixlib=rb-4.0.3&q=80&w=800",
+          new: true,
+          soldOut: false,
+          hot: false,
+          sale: {
+            active: true,
+            percent: 20,
+          },
+        },
+      },
+      {
+        info: {
+          title: "Product B",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          brand: "Brand B",
+          price: 50,
+          ratingAvg: 4.83,
+          ratingCount: 211,
+          colors: ["#ee3333", "#44dd88", "#1144aa"],
+          image:
+            "https://images.unsplash.com/photo-1531512721928-a2c9d1a3fb9f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8dG95c3x8fHx8fDE3MDYwNTc2OTU&ixlib=rb-4.0.3&q=80&w=800",
+          new: false,
+          soldOut: true,
+          hot: false,
+          sale: {
+            active: false,
+            percent: 35,
+          },
+        },
+      },
+      {
+        info: {
+          title: "Product C",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          brand: "Brand C",
+          price: 25,
+          ratingAvg: 4.45,
+          ratingCount: 14,
+          colors: ["#995522", "#559292", "#ffffff"],
+          image:
+            "https://images.unsplash.com/photo-1517686748843-bb360cfc62b3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8dG95c3x8fHx8fDE3MDYwNTc2ODk&ixlib=rb-4.0.3&q=80&w=800",
+          new: false,
+          soldOut: false,
+          hot: false,
+          sale: {
+            active: false,
+            percent: 50,
+          },
+        },
+      },
+      {
+        info: {
+          title: "Product D",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae. E pluribus unum.",
+          brand: "Brand C",
+          price: 340,
+          ratingAvg: 3.89,
+          ratingCount: 2392,
+          colors: ["#ee3333", "#33ee33", "#3333ee"],
+          image:
+            "https://images.unsplash.com/photo-1618842676088-c4d48a6a7c9d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8dG95c3x8fHx8fDE3MDYwNTc3MDY&ixlib=rb-4.0.3&q=80&w=800",
           new: false,
           soldOut: false,
           hot: false,
