@@ -1,5 +1,5 @@
-export const productBlockHtmlString = `<div href="/product-page" className="product-block">
-  <a className="image-wrapper">
+export const productBlockHtmlString = `<div className="product-block">
+  <a className="image-wrapper" href="/product-page">
     <div className="floating top-left">
       <span className="badge new">New</span>
       <span className="badge sale">-50%</span>
@@ -16,7 +16,7 @@ export const productBlockHtmlString = `<div href="/product-page" className="prod
         <arrowUpRightIcon />
       </div>
 
-      <a className="name">Product A</a>
+      <a className="name" href="/product-page">Product A</a>
       <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
       <div className="price-and-ratings">
         <div className="prices">
