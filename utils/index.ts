@@ -141,7 +141,7 @@ div.product-block-basic > div.caption > section > a.title {
 }
 
 div.product-block-basic > div.caption > section > p.description {
-  @apply h-14 overflow-clip text-sm leading-snug tracking-tight;
+  @apply line-clamp-3 text-sm leading-snug tracking-tight;
 }
 
 div.product-block-basic > div.caption > section > div.price-and-ratings {
