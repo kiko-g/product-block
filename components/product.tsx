@@ -135,23 +135,23 @@ export function CustomizedProduct({ product }: CustomizedProductProps) {
   return (
     <div
       className={clsx(
-        "flex w-full flex-col self-stretch overflow-hidden rounded border-0 border-gray-300 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-gray-700 dark:bg-black/30 md:w-64",
+        "flex max-h-[80vh] w-full flex-col self-stretch overflow-hidden rounded border-0 border-gray-300 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-gray-700 dark:bg-black/30 md:w-72",
       )}
     >
       <a className="relative overflow-hidden" href={`#link-from-image-wrapper-${productId}`}>
         <div className="absolute left-0 top-0 m-2 flex flex-col gap-y-1.5">
           {product.info.new && (
-            <span className="z-10 h-full w-full rounded-md border border-lime-700 bg-lime-600/90 px-1.5 py-1.5 text-center text-xs font-medium tracking-tighter text-white">
+            <span className="z-10 h-full w-full rounded border-2 border-emerald-600 bg-emerald-600/80 px-1 py-1 text-center text-xs font-medium tracking-tighter text-white">
               New
             </span>
           )}
           {product.info.sale.active && (
-            <span className="z-10 h-full w-full rounded-md border border-rose-800 bg-rose-700/90 px-1.5 py-1.5 text-center text-xs font-medium tracking-tighter text-white">
+            <span className="z-10 h-full w-full rounded border-2 border-red-600 bg-red-600/80 px-1 py-1 text-center text-xs font-medium tracking-tighter text-white">
               -{product.info.sale.percent}%
             </span>
           )}
           {product.info.soldOut && (
-            <span className="z-10 h-full w-full rounded-md border border-gray-600 bg-gray-500/90 px-1.5 py-1.5 text-center text-xs font-medium tracking-tighter text-white">
+            <span className="z-10 h-full w-full rounded border-2 border-slate-600 bg-slate-600/80 px-1 py-1 text-center text-xs font-medium tracking-tighter text-white">
               Sold Out
             </span>
           )}
@@ -187,7 +187,7 @@ export function CustomizedProduct({ product }: CustomizedProductProps) {
           >
             {product.info.title}
           </a>
-          <p className="h-16 overflow-clip text-sm tracking-tight">{product.info.description}</p>
+          <p className="line-clamp-3 text-sm tracking-tight">{product.info.description}</p>
           <div className="mb-5 mt-2 flex w-full flex-col justify-start gap-2">
             <div className="flex flex-col items-start text-xs">
               <div className="flex items-center gap-x-1 tracking-tight hover:underline">
@@ -277,7 +277,7 @@ export function CustomizedProduct({ product }: CustomizedProductProps) {
                   d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
                 />
               </svg>
-              <span>Details</span>
+              <span className="hidden">Details</span>
             </button>
           </div>
         </div>

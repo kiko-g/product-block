@@ -83,7 +83,7 @@ div.product-block-impact > div.caption > section > a.title {
 }
 
 div.product-block-impact > div.caption > section > p.description {
-  @apply h-14 overflow-clip text-sm leading-snug tracking-tighter text-gray-600 dark:text-gray-300;
+  @apply line-clamp-3 text-sm leading-snug tracking-tighter text-gray-600 dark:text-gray-300;
 }
 
 div.product-block-impact > div.caption > section > div.price-and-ratings {
@@ -151,7 +151,7 @@ div.product-block-impact > div.caption > div.product-footer > div.colors > butto
 }
 
 div.product-block-impact > div.caption > div.product-footer > div.colors > button.color.active {
-  @apply ring-2 ring-black ring-offset-2 ring-offset-white dark:ring-white dark:ring-offset-gray-800;
+  @apply ring-2 ring-black ring-offset-0 ring-offset-white dark:ring-white dark:ring-offset-gray-800;
 }
 
 div.product-block-impact > div.caption > div.product-footer > div.buttons {

@@ -1,17 +1,13 @@
-<a href="/product-page" className="product-block">
-  <div className="image-wrapper">
+<div href="/product-page" className="product-block">
+  <a className="image-wrapper">
     <div className="floating top-left">
       <span className="badge new">New</span>
       <span className="badge sale">-50%</span>
       <span className="badge sold-out">Sold Out</span>
-      <span className="badge hot">Hot</span>
     </div>
 
-    <img
-      alt="Product A1"
-      src="https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800"
-    />
-  </div>
+    <img alt="Product A1" src="https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe" />
+  </a>
 
   <div className="caption group">
     <section>
@@ -20,7 +16,7 @@
         <arrowUpRightIcon />
       </div>
 
-      <h3 className="name">Product A</h3>
+      <a className="name">Product A</a>
       <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
       <div className="price-and-ratings">
         <div className="prices">
@@ -34,12 +30,11 @@
             <span className="rating-float">4.95</span>
             <span className="rating-count">(73)</span>
           </div>
-          <span className="sold-a-lot">500+ sold this week</span>
         </div>
       </div>
     </section>
 
-    <footer>
+    <div class="product-footer">
       <div className="colors">
         <button onclick="setColor('Gray')" class="color"></button>
         <button onclick="setColor('Brown')" class="color"></button>
@@ -55,8 +50,9 @@
 
         <button className="details">
           <horizontalEllipsisIcon />
+          <span>Details</span>
         </button>
       </div>
-    </footer>
+    </div>
   </div>
-</a>
+</div>

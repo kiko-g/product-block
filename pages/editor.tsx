@@ -15,7 +15,7 @@ export default function Home() {
   const [badgePosition, setBadgePosition] = React.useState<BadgePosition>("top-left");
   const [hoverEffect, setHoverEffect] = React.useState(true);
 
-  const defaultProduct: ProductType = {
+  const defaultPrd: ProductType = {
     info: {
       title: "Product Title",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -39,14 +39,15 @@ export default function Home() {
   const product: ProductType = {
     info: {
       title: "Product A",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget mattis aliquam, augue nisl ultricies nunc, nec tincidunt velit nunc quis eros.",
       brand: "Brand A",
-      price: 100,
-      ratingAvg: 4.78,
-      ratingCount: 839,
-      colors: ["#000000", "#00ff00"],
+      price: 1270,
+      ratingAvg: 4.82,
+      ratingCount: 3275,
+      colors: ["#224455", "#33bb99", "#aa6677", "#4499ee"],
       image:
-        "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDU1MTQxNjk&ixlib=rb-4.0.3&q=80&w=800",
+        "https://images.unsplash.com/photo-1536992266094-82847e1fd431?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDYwMzUzODk&ixlib=rb-4.0.3&q=80&w=800",
       new: true,
       soldOut: false,
       hot: false,
