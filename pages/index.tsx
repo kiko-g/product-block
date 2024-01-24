@@ -60,7 +60,7 @@ const sections: SectionsWithProducts[] = [
       },
       {
         info: {
-          title: "Product C",
+          title: "Product D",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           brand: "Brand C",
           price: 25,
@@ -73,8 +73,28 @@ const sections: SectionsWithProducts[] = [
           soldOut: false,
           hot: false,
           sale: {
-            active: true,
+            active: false,
             percent: 50,
+          },
+        },
+      },
+      {
+        info: {
+          title: "Product D",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          brand: "Brand C",
+          price: 25,
+          ratingAvg: 4.45,
+          ratingCount: 14,
+          colors: ["#cc3300", "#226699", "#991100", "#55aa00"],
+          image:
+            "https://images.unsplash.com/photo-1614676471928-2ed0ad1061a4?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDYwNTY5NDQ&ixlib=rb-4.0.3&q=80&w=800",
+          new: false,
+          soldOut: false,
+          hot: false,
+          sale: {
+            active: true,
+            percent: 80,
           },
         },
       },
@@ -139,8 +159,28 @@ const sections: SectionsWithProducts[] = [
           soldOut: false,
           hot: false,
           sale: {
-            active: true,
+            active: false,
             percent: 50,
+          },
+        },
+      },
+      {
+        info: {
+          title: "Product D",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae. E pluribus unum.",
+          brand: "Brand C",
+          price: 340,
+          ratingAvg: 3.89,
+          ratingCount: 2392,
+          colors: ["#7722dd", "#dd4499", "#ff8866"],
+          image:
+            "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-studio-select-202306?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1684345161143",
+          new: false,
+          soldOut: false,
+          hot: false,
+          sale: {
+            active: true,
+            percent: 80,
           },
         },
       },
