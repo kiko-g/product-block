@@ -4,17 +4,18 @@ import type { ColorHex, ProductType } from "@/types";
 
 type ProductProps = {
   product: ProductType;
+  styleSuffix: string;
   wrapperClassName?: string;
 };
 
-export function Product({ product, wrapperClassName }: ProductProps) {
+export function Product({ product, styleSuffix, wrapperClassName }: ProductProps) {
   const [color, setColor] = useState<ColorHex>(product.info.colors[0]);
 
   const productId = product.info.title.replace(/\s/g, "-").toLowerCase();
   const priceWithDiscount = product.info.price - (product.info.price * product.info.sale.percent) / 100;
 
   return (
-    <div className={clsx("product-block", wrapperClassName)}>
+    <div className={clsx(`product-block-${styleSuffix}`, wrapperClassName)}>
       <a className="image-wrapper" href={`#link-from-image-wrapper-${productId}`}>
         <div className="floating top-left">
           {product.info.new && <span className="badge new">New</span>}
@@ -113,6 +114,7 @@ export function Product({ product, wrapperClassName }: ProductProps) {
                   d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
                 />
               </svg>
+              <span>Details</span>
             </button>
           </div>
         </div>
@@ -129,16 +131,27 @@ export function CustomizedProduct({ product, wrapperClassName }: ProductProps) {
   return (
     <div
       className={clsx(
-        "flex w-full flex-col self-stretch overflow-hidden rounded border-0 border-gray-300 bg-[#f8fafa] transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-gray-700 dark:bg-black/30 md:w-64",
+        "flex w-full flex-col self-stretch overflow-hidden rounded border-0 border-gray-300 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-gray-700 dark:bg-black/30 md:w-64",
         wrapperClassName,
       )}
     >
       <a className="relative overflow-hidden" href={`#link-from-image-wrapper-${productId}`}>
         <div className="absolute left-0 top-0 m-2 flex flex-col gap-y-1.5">
-          {product.info.new && <span className="badge new">New</span>}
-          {product.info.sale.active && <span className="badge sale">-{product.info.sale.percent}%</span>}
-          {product.info.soldOut && <span className="badge sold-out">Sold Out</span>}
-          {product.info.hot && <span className="badge hot">Hot</span>}
+          {product.info.new && (
+            <span className="z-10 h-full w-full rounded-md border border-lime-700 bg-lime-600/90 px-1.5 py-1.5 text-center text-xs font-medium tracking-tighter text-white">
+              New
+            </span>
+          )}
+          {product.info.sale.active && (
+            <span className="z-10 h-full w-full rounded-md border border-rose-800 bg-rose-700/90 px-1.5 py-1.5 text-center text-xs font-medium tracking-tighter text-white">
+              -{product.info.sale.percent}%
+            </span>
+          )}
+          {product.info.soldOut && (
+            <span className="z-10 h-full w-full rounded-md border border-gray-600 bg-gray-500/90 px-1.5 py-1.5 text-center text-xs font-medium tracking-tighter text-white">
+              Sold Out
+            </span>
+          )}
         </div>
 
         <img
@@ -193,7 +206,7 @@ export function CustomizedProduct({ product, wrapperClassName }: ProductProps) {
               <span
                 className={clsx(
                   "w-min leading-none tracking-tight",
-                  product.info.sale.active ? "font-semibold" : "font-medium line-through",
+                  product.info.sale.active ? "font-medium line-through" : "font-semibold",
                 )}
               >
                 {product.info.price.toFixed(2)}$
@@ -243,7 +256,6 @@ export function CustomizedProduct({ product, wrapperClassName }: ProductProps) {
                   d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
                 />
               </svg>
-
               <span>Add to cart</span>
             </button>
 
@@ -262,6 +274,7 @@ export function CustomizedProduct({ product, wrapperClassName }: ProductProps) {
                   d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
                 />
               </svg>
+              <span>Details</span>
             </button>
           </div>
         </div>

@@ -30,7 +30,7 @@ export function Layout({ children, title }: { children: React.ReactNode; title: 
         <title>{renderedTitle}</title>
       </Head>
 
-      <main className="relative flex min-h-screen w-screen items-center justify-between bg-slate-50 text-gray-800 dark:bg-[#181e2a] dark:text-white">
+      <main className="relative flex min-h-screen w-screen items-start justify-between bg-slate-50 text-gray-800 dark:bg-[#181e2a] dark:text-white">
         <Sidebar />
         <div className="flex w-full flex-1 items-start self-stretch">{children}</div>
       </main>
@@ -43,8 +43,8 @@ function Sidebar() {
   const { pathname } = router;
 
   return (
-    <aside className="hidden h-full min-h-screen min-w-full shrink-0 flex-col space-y-4 self-stretch border-black/10 bg-white px-4 py-4 dark:border-white/10 dark:bg-[#131720] lg:flex lg:min-w-[16rem]">
-      <ul className="flex w-full flex-1 flex-col space-y-2">
+    <aside className="hidden min-w-full shrink-0 flex-col space-y-4 self-stretch border-black/10 bg-white px-4 py-4 dark:border-white/10 dark:bg-[#131720] lg:flex lg:min-w-[16rem]">
+      <ul className="top-0 flex w-full flex-1 flex-col space-y-2">
         {navigations
           .filter((item) => item.shown !== false)
           .map((item, itemIdx) => {
@@ -70,13 +70,13 @@ function Sidebar() {
           })}
       </ul>
       <hr />
-      <div className="flex flex-col items-center justify-between gap-3 xl:flex-row">
+      <div className="flex flex-row items-center justify-between gap-2">
         <div className="flex w-full items-center justify-start gap-x-2.5">
-          <DarkModeSwitch />
+          <GitHubLink />
         </div>
 
         <div className="flex items-center gap-x-2">
-          <GitHubLink />
+          <DarkModeSwitch />
         </div>
       </div>
     </aside>

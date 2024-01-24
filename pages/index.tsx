@@ -80,6 +80,72 @@ const sections: SectionsWithProducts[] = [
       },
     ],
   },
+  {
+    name: "Elegant",
+    products: [
+      {
+        info: {
+          title: "Product A",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit quia aliquam vitae mattis nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit quia aliquam vitae mattis nisi.",
+          brand: "Brand A",
+          price: 10,
+          ratingAvg: 4.93,
+          ratingCount: 1893,
+          colors: ["#bbb4a8", "#444b5b", "#ffffff", "#4d4e50"],
+          image:
+            "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311054290",
+          new: true,
+          soldOut: false,
+          hot: false,
+          sale: {
+            active: true,
+            percent: 20,
+          },
+        },
+      },
+      {
+        info: {
+          title: "Product B",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          brand: "Brand B",
+          price: 50,
+          ratingAvg: 4.83,
+          ratingCount: 211,
+          colors: ["#ee3333", "#44dd88", "#1144aa"],
+          image:
+            "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba15-midnight-select-202306?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1684518479433",
+          new: false,
+          soldOut: true,
+          hot: false,
+          sale: {
+            active: false,
+            percent: 35,
+          },
+        },
+      },
+      {
+        info: {
+          title: "Product C",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          brand: "Brand C",
+          price: 25,
+          ratingAvg: 4.45,
+          ratingCount: 14,
+          colors: ["#995522", "#559292", "#ffffff"],
+          image:
+            "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-mini-hero-202301?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1670038314708",
+          new: false,
+          soldOut: false,
+          hot: false,
+          sale: {
+            active: true,
+            percent: 50,
+          },
+        },
+      },
+    ],
+  },
 ];
 
 export default function ProductBlockPage() {
@@ -139,7 +205,7 @@ function CardsTab() {
           </h3>
           <div className="flex flex-1 flex-col flex-wrap items-center justify-start gap-5 self-stretch md:flex-row">
             {section.products.map((product, productIdx) => (
-              <Product key={`product-${productIdx}`} product={product} />
+              <Product key={`product-${productIdx}`} styleSuffix={section.name.toLowerCase()} product={product} />
             ))}
           </div>
         </div>

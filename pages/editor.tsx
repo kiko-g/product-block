@@ -3,7 +3,7 @@ import type { Alignment, BadgePosition, Color, ProductType, Size } from "@/types
 
 import { Select } from "@/components/inputs";
 import { Layout } from "@/components/layout";
-import { Product } from "@/components/product";
+import { CustomizedProduct } from "@/components/product";
 
 export default function Home() {
   const [fontSize, setFontSize] = React.useState<Size>("md");
@@ -17,8 +17,9 @@ export default function Home() {
 
   const defaultProduct: ProductType = {
     info: {
-      title: "Product A",
+      title: "Product Title",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      brand: "Brand",
       price: 100,
       ratingAvg: 0,
       ratingCount: 0,
@@ -39,6 +40,7 @@ export default function Home() {
     info: {
       title: "Product A",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      brand: "Brand A",
       price: 100,
       ratingAvg: 4.78,
       ratingCount: 839,
@@ -59,7 +61,7 @@ export default function Home() {
     <Layout title="Editor">
       <div className="grid w-full flex-1 grid-cols-1 divide-x divide-gray-200 self-stretch md:grid-cols-2">
         <article className="mt-4 flex h-full w-full items-center justify-center p-4 md:mt-0 md:p-16">
-          <Product product={product} />
+          <CustomizedProduct product={product} />
         </article>
 
         <aside className="flex h-full w-full items-center border-gray-300 p-4 dark:border-gray-700 md:p-16">
