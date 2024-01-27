@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { TailwindIcon } from "./common/TailwindIcon";
 import { RectangleGroupIcon, Square3Stack3DIcon } from "@heroicons/react/24/outline";
 
 const navigations = [
@@ -16,6 +17,12 @@ const navigations = [
     name: "Editor",
     href: "/editor",
     icon: RectangleGroupIcon,
+    shown: true,
+  },
+  {
+    name: "Tailwind",
+    href: "/tailwind",
+    icon: null,
     shown: true,
   },
 ];
@@ -43,7 +50,7 @@ function Sidebar() {
   const { pathname } = router;
 
   return (
-    <aside className="hidden min-w-full shrink-0 flex-col space-y-4 self-stretch border-black/10 bg-white px-4 py-4 dark:border-white/10 dark:bg-[#131720] lg:flex lg:min-w-[14rem]">
+    <aside className="hidden min-w-full shrink-0 flex-col space-y-4 self-stretch border-black/10 bg-white px-4 py-4 dark:border-white/10 dark:bg-[#131720] md:flex md:min-w-[14rem]">
       <ul className="top-0 flex w-full flex-1 flex-col space-y-2">
         {navigations
           .filter((item) => item.shown !== false)
@@ -59,10 +66,10 @@ function Sidebar() {
                     isActive
                       ? "bg-slate-600 text-white hover:opacity-80 dark:bg-slate-500/80"
                       : "hover:bg-slate-600/10 dark:hover:bg-slate-500/30",
-                    `flex cursor-pointer items-center justify-center gap-2 rounded px-3 py-3 text-sm transition ease-in-out xl:justify-start`,
+                    `flex cursor-pointer items-center justify-center gap-2 rounded px-3 py-3 text-sm transition ease-in-out md:justify-start`,
                   )}
                 >
-                  <item.icon className="h-5 w-5" />
+                  {item.icon === null ? <TailwindIcon isActive={isActive} /> : <item.icon className="h-5 w-5" />}
                   <span className="hidden md:block">{item.name}</span>
                 </Link>
               </li>
