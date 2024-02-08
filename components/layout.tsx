@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { TailwindIcon } from "./common/TailwindIcon";
+import { TailwindIcon } from "@/components/common";
 import { RectangleGroupIcon, Square3Stack3DIcon } from "@heroicons/react/24/outline";
 
 const navigations = [

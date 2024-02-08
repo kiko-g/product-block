@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import clsx from "clsx";
-import type { ProductType } from "@/types";
+import type { ProductType, SectionsWithProducts } from "@/types";
 import { productBlockCssString, productBlockHtmlString } from "@/utils";
 
 import { Tab } from "@headlessui/react";
 import { Layout } from "@/components/layout";
 import { Product } from "@/components/product";
 import { CodeShowcase } from "@/components/CodeShowcase";
-
-type SectionsWithProducts = {
-  name: string;
-  products: ProductType[];
-};
 
 const sections: SectionsWithProducts[] = [
   {

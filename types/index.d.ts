@@ -48,6 +48,11 @@ export type ProductType = {
   };
 };
 
+export type SectionsWithProducts = {
+  name: string;
+  products: ProductType[];
+};
+
 // Product Block Options
 export type Size = "xs" | "sm" | "md" | "lg" | "xl";
 export type Alignment = "left" | "center" | "right";
