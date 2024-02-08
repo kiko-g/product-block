@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { TailwindIcon } from "@/components/common";
-import { RectangleGroupIcon, Square3Stack3DIcon } from "@heroicons/react/24/outline";
+import { PaintBrushIcon, RectangleGroupIcon, Square3Stack3DIcon } from "@heroicons/react/24/outline";
 
 const navigations = [
   {
@@ -17,6 +17,12 @@ const navigations = [
     name: "Editor",
     href: "/editor",
     icon: RectangleGroupIcon,
+    shown: true,
+  },
+  {
+    name: "Themes",
+    href: "/themes",
+    icon: PaintBrushIcon,
     shown: true,
   },
   {
